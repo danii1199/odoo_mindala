@@ -1,13 +1,13 @@
 <odoo>
     <data>
-        <record id="view_duration_music_form" model="ir.ui.view">
-            <field name="name">view.music.songs</field>
-            <field name="model">herenciav1.music</field>
-            <field name="inherit_id" ref="view_music_songs_form" />
+        <record id="herenciav1_canciones_form_view" model="ir.ui.view">
+            <field name="name">herenciav1.canciones</field>
+            <field name="model">herenciav1.canciones</field>
+            <field name="inherit_id" ref="music.view_music_songs_form" />
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='artists']" position="after">
+                <field name="artists" position="after">
                     <field name="duration" />
-                </xpath>
+                </field>
             </field>
         </record>
     </data>

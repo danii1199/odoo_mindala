@@ -1,0 +1,14 @@
+<openerp>
+    <data>
+        <record id="music_songs_form_view_inherited" model="ir.ui.view">
+            <field name="name">music.songs.form.view.inherited</field>
+            <field name="model">music.songs</field>
+            <field name="inherit_id" ref="music.view_music_songs_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='record']" position="replace">
+                    <field name="duration"></field>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,78 @@
+2023-07-11 08:06:25,040 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 174, in run
+    self.loop()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 159, in loop
+    conn.poll()
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2023-07-11 08:06:36,367 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1584, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 133, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1611, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1725, in dispatch
+    return self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 154, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 697, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/mnt/extra-addons/music/controllers/controllers.py", line 9, in song
+    return request.render("music.single_song", song)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1482, in render
+    response = Response(template=template, qcontext=qcontext, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1044, in __init__
+    self.set_default(template, qcontext, uid)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1081, in set_default
+    self.qcontext['response_template'] = self.template
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 5877, in __setitem__
+    return self._fields[key].__set__(self, value)
+KeyError: 'response_template'
+2023-07-12 08:49:14,186 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1584, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 133, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1611, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1725, in dispatch
+    return self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 154, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 697, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/mnt/extra-addons/music/controllers/controllers.py", line 9, in song
+    "song" : song
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1482, in render
+    response = Response(template=template, qcontext=qcontext, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1044, in __init__
+    self.set_default(template, qcontext, uid)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1081, in set_default
+    self.qcontext['response_template'] = self.template
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 5877, in __setitem__
+    return self._fields[key].__set__(self, value)
+KeyError: 'response_template'
+2023-07-12 08:49:47,870 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 174, in run
+    self.loop()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 159, in loop
+    conn.poll()
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+

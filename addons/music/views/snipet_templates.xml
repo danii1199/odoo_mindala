@@ -1,0 +1,113 @@
+<odoo>
+
+    <template id="dynamic_filter_template_music_songs_ffl" name="Canciones" priority="2">
+        <t t-foreach="records" t-as="data" class="s_blog_posts_post">
+            <t t-set="record" t-value="data['_record']" />
+            <div class="o_carousel_product_card bg-transparent w-100 card border-0">
+                <input type="hidden" name="product-id" t-att-data-product-id="record.id" />
+                <a class="o_carousel_product_img_link o_dynamic_product_hovered stretched-link"
+                    t-att-href="'/canciones/%s' % (slug(record))">
+                    <div class="overflow-hidden rounded">
+                        <img
+                            class="card-img-top o_img_product_square o_img_product_cover h-auto"
+                            loading="lazy"
+                            t-att-src="image_data_uri(record.image)"
+                            t-att-alt="record.name" />
+                    </div>
+                </a>
+                <div
+                    class="o_carousel_product_card_body d-flex flex-wrap flex-column justify-content-between h-100 p-3">
+                    <div class="h6 card-title" t-field="record.name" />
+                    <div>
+                        <div>
+                            <span t-field="record.record" />
+                        </div>
+                        <div>
+                            <span t-field="record.artists" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="single_song" name="Single Song" inherit_id="website.layout">
+        <xpath expr="//main" position="inside">
+            <t t-if="song">
+                <div class="oe_structure o_editable">
+                    <div class="d-flex justify-content-center">
+                        <div class="card overflow-hidden shadow rounded-4 border-0 m-5 w-50">
+                            <div class="card-body p-0">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="p-5">
+                                        <h2 class="fw-bolder" t-field="song.name"></h2>
+                                        <p t-field="song.record" />
+                                        <t t-foreach="song.artists" t-as="artist_tag">
+                                            <a class="badge text-primary border me-1"
+                                                t-att-href="'/artistas/%s' % (slug(artist_tag))"
+                                                t-esc="artist_tag.name" />
+                                        </t>
+                                    </div>
+                                    <img class="img-fluid"
+                                        style="height:400px"
+                                        t-att-src="image_data_uri(song.image)"
+                                        t-att-alt="song.record" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <div class="oe_structure oe_empty" />
+        </xpath>
+    </template>
+
+    <template id="dynamic_filter_template_music_artists_hjl" name="Artistas" priority="1">
+        <div t-foreach="records" t-as="data" class="s_blog_posts_post">
+            <t t-set="record" t-value="data['_record']" />
+            <div class="o_carousel_product_card bg-transparent w-100 card border-0">
+                <input type="hidden" name="product-id" t-att-data-product-id="record.id" />
+                <a class="o_carousel_product_img_link o_dynamic_product_hovered stretched-link"
+                    t-att-href="'/artistas/%s' % (record.id)">
+                    <div class="overflow-hidden rounded">
+                        <img class="card-img-top o_img_product_square o_img_product_cover h-auto"
+                            loading="lazy"
+                            t-att-src="image_data_uri(record.image)"
+                            t-att-alt="record.name" />
+                    </div>
+                </a>
+                <div
+                    class="o_carousel_product_card_body d-flex flex-wrap flex-column justify-content-between h-100 p-3">
+                    <div class="h6 card-title" t-field="record.name" />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="single_artist" name="Artist" inherit_id="website.layout">
+        <xpath expr="//main" position="inside">
+            <t t-if="artist">
+                <div class="d-flex justify-content-center">
+                    <div class="card overflow-hidden shadow rounded-4 border-0 m-5 w-50">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="p-5">
+                                    <h2 class="fw-bolder" t-field="artist.name"></h2>
+                                    <t t-foreach="artist.songs" t-as="song_tag">
+                                        <a class="badge text-primary border me-1"
+                                            t-att-href="'/canciones/%s' % (song_tag.id)"
+                                            t-esc="song_tag.name" />
+                                    </t>
+                                </div>
+                                <img class="img-fluid"
+                                    style="height:400px"
+                                    t-att-src="image_data_uri(artist.image)"
+                                    t-att-alt="artist.name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

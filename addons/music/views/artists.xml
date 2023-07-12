@@ -1,0 +1,104 @@
+<odoo>
+    <data>
+        <!-- Salida de formulario de cada elemento -->
+        <record id="view_music_artists_form" model="ir.ui.view">
+            <field name="name">view.music.artists.form</field>
+            <field name="model">music.artists</field>
+            <field name="arch" type="xml">
+                <form string="Artista">
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name" />
+                                <field name="image" widget="image" />
+                            </group>
+                            <group name="group_right">
+                                <field name="first_name" />
+                                <field name="last_name" />
+                                <field name="age" />
+                                <field name="songs" widget="many2many_tags" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Salida de listado -->
+        <record id="view_music_artists_tree" model="ir.ui.view">
+            <field name="name">view.music.artists.tree</field>
+            <field name="model">music.artists</field>
+            <field name="arch" type="xml">
+                <tree string="Artista">
+                    <field name="name" />
+                    <field name="personal_data" />
+                    <field name="age" />
+                    <field name="songs" widget="many2many_tags" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista kanban en el listado-->
+        <record id="view_music_artists_kanban" model="ir.ui.view">
+            <field name="name">view.music.artists.kanban</field>
+            <field name="model">music.artists</field>
+            <field name="arch" type="xml">
+                <kanban class="o_music_artists_kanban">
+                    <field name="id" />
+                    <field name="name" />
+                    <field name="last_name" />
+                    <field name="age" />
+                    <field name="first_name" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar"
+                                        t-att-src="kanban_image('music.artists', 'image', record.id.raw_value)" />
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name" />
+                                    </strong>
+                                    <div>
+                                        <field name="personal_data" />
+                                    </div>
+                                    <div>
+                                        <field name="age" />
+                                    </div>
+                                    <div>
+                                        <field name="songs" widget="many2many_tags" />
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Relación del item de menú al listado(enlazar las vistas al item del menú) -->
+
+        <record id="action_music_artists_view" model="ir.actions.act_window">
+            <field name="name">Artista</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">music.artists</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create"> Artistas </p>
+                <p> Click 'Nuevo' para añadir nuevos elementos </p>
+            </field>
+        </record>
+
+
+        <!-- Menú -->
+        <menuitem id="menu_music_root" name="Música" sequence="10" />
+
+        <menuitem id="menu_music_options" name="Música" parent="menu_music_root"
+            sequence="0" />
+
+        <menuitem id="menu_music_songs" name="Canciones" parent="menu_music_options"
+            sequence="0" action="action_music_songs_view" />
+        <menuitem id="menu_music_artists" name="Artistas" parent="menu_music_options"
+            sequence="0" action="action_music_artists_view" />
+    </data>
+</odoo>

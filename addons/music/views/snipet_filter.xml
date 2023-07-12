@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <data>
+            <!-- Filters for Dynamic Filter -->
+            <record id="dynamic_snippet_latest_music_songs_filter" model="ir.filters">
+                <field name="name">Últimas canciones</field>
+                <field name="model_id">music.songs</field>
+                <field name="user_id" eval="False" />
+                <field name="domain">[('create_date', '&lt;=', context_today())]</field>
+                <field name="sort">['create_date desc']</field>
+                <field name="action_id" ref="website.action_website" />
+            </record>
+
+            <record id="dynamic_snippet_latest_music_artists_filter" model="ir.filters">
+                <field name="name">Últimos cantantes</field>
+                <field name="model_id">music.artists</field>
+                <field name="user_id" eval="False" />
+                <field name="domain">[('create_date', '&lt;=', context_today())]</field>
+                <field name="sort">['create_date desc']</field>
+                <field name="action_id" ref="website.action_website" />
+            </record>
+
+            <!-- Dynamic Filter -->
+            <record id="dynamic_filter_latest_music_songs" model="website.snippet.filter">
+                <field name="name">Últimas canciones</field>
+                <field name="filter_id" ref="music.dynamic_snippet_latest_music_songs_filter" />
+                <field name="field_names">name</field>
+                <field name="limit" eval="16" />
+            </record>
+
+            <record id="dynamic_filter_latest_music_artists" model="website.snippet.filter">
+                <field name="name">Últimos cantantes</field>
+                <field name="filter_id" ref="music.dynamic_snippet_latest_music_artists_filter" />
+                <field name="field_names">name</field>
+                <field name="limit" eval="16" />
+            </record>
+        </data>
+    </data>
+</odoo>

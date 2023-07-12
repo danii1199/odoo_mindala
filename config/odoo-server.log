@@ -1,4 +1,188 @@
-2023-07-11 08:06:25,040 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
+2023-07-12 10:51:48,017 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 64, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 197, in load_module_graph
+    model_names = registry.load(cr, package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 247, in load
+    model = cls._build_model(self, cr)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 635, in _build_model
+    raise TypeError("Model %r inherits from non-existing model %r." % (name, parent))
+TypeError: Model 'herencia-v1.music' inherits from non-existing model 'music.songs'.
+2023-07-12 10:51:48,018 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 64, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1563, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 66, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-14>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 197, in load_module_graph
+    model_names = registry.load(cr, package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 247, in load
+    model = cls._build_model(self, cr)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 635, in _build_model
+    raise TypeError("Model %r inherits from non-existing model %r." % (name, parent))
+TypeError: Model 'herencia-v1.music' inherits from non-existing model 'music.songs'.
+2023-07-12 10:51:57,461 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 64, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 197, in load_module_graph
+    model_names = registry.load(cr, package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 247, in load
+    model = cls._build_model(self, cr)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 635, in _build_model
+    raise TypeError("Model %r inherits from non-existing model %r." % (name, parent))
+TypeError: Model 'herencia-v1.music' inherits from non-existing model 'music.songs'.
+2023-07-12 10:51:57,461 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 64, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1563, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 66, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-14>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 197, in load_module_graph
+    model_names = registry.load(cr, package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 247, in load
+    model = cls._build_model(self, cr)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 635, in _build_model
+    raise TypeError("Model %r inherits from non-existing model %r." % (name, parent))
+TypeError: Model 'herencia-v1.music' inherits from non-existing model 'music.songs'.
+2023-07-12 10:52:45,066 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 64, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 197, in load_module_graph
+    model_names = registry.load(cr, package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 247, in load
+    model = cls._build_model(self, cr)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 653, in _build_model
+    check_pg_name(ModelClass._table)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 110, in check_pg_name
+    raise ValidationError("Invalid characters in table name %r" % name)
+odoo.exceptions.ValidationError: Invalid characters in table name 'herencia-v1_music'
+2023-07-12 10:52:58,121 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 64, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'prueba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 197, in load_module_graph
+    model_names = registry.load(cr, package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 247, in load
+    model = cls._build_model(self, cr)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 653, in _build_model
+    check_pg_name(ModelClass._table)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 110, in check_pg_name
+    raise ValidationError("Invalid characters in table name %r" % name)
+odoo.exceptions.ValidationError: Invalid characters in table name 'herencia-v1_music'
+2023-07-12 11:02:11,743 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 174, in run
     self.loop()
@@ -8,7 +192,104 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 	This probably means the server terminated abnormally
 	before or while processing the request.
 
-2023-07-11 08:06:36,367 1 ERROR prueba odoo.http: Exception during request handling. 
+2023-07-12 11:02:21,888 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 85, in lookup
+    r = d[key]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.model.data', <function IrModelData._xmlid_lookup at 0x7f87644330d0>, 'herencia-v1.view_music_songs_form')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 568, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 681, in id_get
+    res = self.model_id_get(id_str, raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 687, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2023, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)[1:3]
+  File "<decorator-gen-40>", line 2, in _xmlid_lookup
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2016, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: herencia-v1.view_music_songs_form
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 231, in load_module_graph
+    load_data(cr, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 71, in load_data
+    tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 763, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 829, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 749, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 711, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /mnt/extra-addons/herencia-v1/views/templates.xml:3, somewhere inside
+<record id="view_duration_music_form" model="ir.ui.view">
+            <field name="name">view.music.songs</field>
+            <field name="model">music.songs</field>
+            <field name="inherit_id" ref="view_music_songs_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='artists']" position="after">
+                    <field name="duration"/>
+                </xpath>
+            </field>
+        </record>
+2023-07-12 11:02:21,892 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 85, in lookup
+    r = d[key]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.model.data', <function IrModelData._xmlid_lookup at 0x7f87644330d0>, 'herencia-v1.view_music_songs_form')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 568, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 681, in id_get
+    res = self.model_id_get(id_str, raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 687, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2023, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)[1:3]
+  File "<decorator-gen-40>", line 2, in _xmlid_lookup
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2016, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: herencia-v1.view_music_songs_form
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
     response = request._serve_db()
@@ -18,55 +299,64 @@ Traceback (most recent call last):
     result = func()
   File "/usr/lib/python3/dist-packages/odoo/http.py", line 1611, in _serve_ir_http
     response = self.dispatcher.dispatch(rule.endpoint, args)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1725, in dispatch
-    return self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1815, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
   File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
     response = super()._dispatch(endpoint)
   File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 154, in _dispatch
     result = endpoint(**request.params)
   File "/usr/lib/python3/dist-packages/odoo/http.py", line 697, in route_wrapper
     result = endpoint(self, *args, **params_ok)
-  File "/mnt/extra-addons/music/controllers/controllers.py", line 9, in song
-    return request.render("music.single_song", song)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1482, in render
-    response = Response(template=template, qcontext=qcontext, **kw)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1044, in __init__
-    self.set_default(template, qcontext, uid)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1081, in set_default
-    self.qcontext['response_template'] = self.template
-  File "/usr/lib/python3/dist-packages/odoo/models.py", line 5877, in __setitem__
-    return self._fields[key].__set__(self, value)
-KeyError: 'response_template'
-2023-07-12 08:49:14,186 1 ERROR prueba odoo.http: Exception during request handling. 
-Traceback (most recent call last):
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
-    response = request._serve_db()
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1584, in _serve_db
-    return service_model.retrying(self._serve_ir_http, self.env)
-  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 133, in retrying
-    result = func()
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1611, in _serve_ir_http
-    response = self.dispatcher.dispatch(rule.endpoint, args)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1725, in dispatch
-    return self.request.registry['ir.http']._dispatch(endpoint)
-  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
-    response = super()._dispatch(endpoint)
-  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 154, in _dispatch
-    result = endpoint(**request.params)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 697, in route_wrapper
-    result = endpoint(self, *args, **params_ok)
-  File "/mnt/extra-addons/music/controllers/controllers.py", line 9, in song
-    "song" : song
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1482, in render
-    response = Response(template=template, qcontext=qcontext, **kw)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1044, in __init__
-    self.set_default(template, qcontext, uid)
-  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1081, in set_default
-    self.qcontext['response_template'] = self.template
-  File "/usr/lib/python3/dist-packages/odoo/models.py", line 5877, in __setitem__
-    return self._fields[key].__set__(self, value)
-KeyError: 'response_template'
-2023-07-12 08:49:47,870 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 46, in call_button
+    action = self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 33, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 461, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 448, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-80>", line 2, in button_immediate_upgrade
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 76, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 682, in button_immediate_upgrade
+    return self._button_immediate_function(type(self).button_upgrade)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 615, in _button_immediate_function
+    registry = modules.registry.Registry.new(self._cr.dbname, update_module=True)
+  File "<decorator-gen-14>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 484, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 231, in load_module_graph
+    load_data(cr, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 71, in load_data
+    tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 763, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 829, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 749, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 711, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /mnt/extra-addons/herencia-v1/views/templates.xml:3, somewhere inside
+<record id="view_duration_music_form" model="ir.ui.view">
+            <field name="name">view.music.songs</field>
+            <field name="model">music.songs</field>
+            <field name="inherit_id" ref="view_music_songs_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='artists']" position="after">
+                    <field name="duration"/>
+                </xpath>
+            </field>
+        </record>
+2023-07-12 11:03:45,171 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 174, in run
     self.loop()
@@ -76,3 +366,356 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 	This probably means the server terminated abnormally
 	before or while processing the request.
 
+2023-07-12 11:03:47,814 1 ERROR prueba odoo.modules.loading: Some modules are not loaded, some dependencies or manifest may be missing: ['herencia-v1'] 
+2023-07-12 11:04:40,103 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 174, in run
+    self.loop()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 159, in loop
+    conn.poll()
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2023-07-12 11:04:43,457 1 ERROR prueba odoo.modules.loading: Some modules are not loaded, some dependencies or manifest may be missing: ['herencia-v1'] 
+2023-07-12 11:04:49,316 1 ERROR prueba odoo.modules.loading: Some modules have inconsistent states, some dependencies may be missing: ['herencia-v1'] 
+2023-07-12 11:05:54,207 1 ERROR ? odoo.addons.bus.models.bus: Bus.loop error, sleep and retry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 174, in run
+    self.loop()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus.py", line 159, in loop
+    conn.poll()
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2023-07-12 11:05:57,572 1 ERROR prueba odoo.modules.loading: Some modules have inconsistent states, some dependencies may be missing: ['herencia-v1'] 
+2023-07-12 11:06:38,233 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 85, in lookup
+    r = d[key]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.model.data', <function IrModelData._xmlid_lookup at 0x7f7cd64d90d0>, 'herenciav1.view_music_songs_form')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 568, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 681, in id_get
+    res = self.model_id_get(id_str, raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 687, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2023, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)[1:3]
+  File "<decorator-gen-40>", line 2, in _xmlid_lookup
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2016, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: herenciav1.view_music_songs_form
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 488, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 231, in load_module_graph
+    load_data(cr, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 71, in load_data
+    tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 763, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 829, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 749, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 711, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /mnt/extra-addons/herenciav1/views/templates.xml:3, somewhere inside
+<record id="view_duration_music_form" model="ir.ui.view">
+            <field name="name">view.music.songs</field>
+            <field name="model">herenciav1.music</field>
+            <field name="inherit_id" ref="view_music_songs_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='artists']" position="after">
+                    <field name="duration"/>
+                </xpath>
+            </field>
+        </record>
+2023-07-12 11:06:38,236 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 85, in lookup
+    r = d[key]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.model.data', <function IrModelData._xmlid_lookup at 0x7f7cd64d90d0>, 'herenciav1.view_music_songs_form')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 568, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 681, in id_get
+    res = self.model_id_get(id_str, raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 687, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2023, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)[1:3]
+  File "<decorator-gen-40>", line 2, in _xmlid_lookup
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2016, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: herenciav1.view_music_songs_form
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1584, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 133, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1611, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1815, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 154, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 697, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 46, in call_button
+    action = self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 33, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 461, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 448, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-74>", line 2, in button_immediate_install
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 76, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 491, in button_immediate_install
+    return self._button_immediate_function(type(self).button_install)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 615, in _button_immediate_function
+    registry = modules.registry.Registry.new(self._cr.dbname, update_module=True)
+  File "<decorator-gen-14>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 488, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 231, in load_module_graph
+    load_data(cr, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 71, in load_data
+    tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 763, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 829, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 749, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 711, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /mnt/extra-addons/herenciav1/views/templates.xml:3, somewhere inside
+<record id="view_duration_music_form" model="ir.ui.view">
+            <field name="name">view.music.songs</field>
+            <field name="model">herenciav1.music</field>
+            <field name="inherit_id" ref="view_music_songs_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='artists']" position="after">
+                    <field name="duration"/>
+                </xpath>
+            </field>
+        </record>
+2023-07-12 11:06:44,071 1 ERROR prueba odoo.modules.loading: Some modules are not loaded, some dependencies or manifest may be missing: ['herencia-v1'] 
+2023-07-12 11:08:06,123 1 ERROR prueba odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 85, in lookup
+    r = d[key]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.model.data', <function IrModelData._xmlid_lookup at 0x7f7cd64d90d0>, 'herenciav1.view_music_songs_form')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 568, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 681, in id_get
+    res = self.model_id_get(id_str, raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 687, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2023, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)[1:3]
+  File "<decorator-gen-40>", line 2, in _xmlid_lookup
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2016, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: herenciav1.view_music_songs_form
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 488, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 231, in load_module_graph
+    load_data(cr, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 71, in load_data
+    tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 763, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 829, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 749, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 711, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /mnt/extra-addons/herenciav1/views/templates.xml:3, somewhere inside
+<record id="view_duration_music_form" model="ir.ui.view">
+            <field name="name">view.music.songs</field>
+            <field name="model">herenciav1.music</field>
+            <field name="inherit_id" ref="view_music_songs_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='artists']" position="after">
+                    <field name="duration"/>
+                </xpath>
+            </field>
+        </record>
+2023-07-12 11:08:06,124 1 ERROR prueba odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 85, in lookup
+    r = d[key]
+  File "<decorator-gen-6>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.model.data', <function IrModelData._xmlid_lookup at 0x7f7cd64d90d0>, 'herenciav1.view_music_songs_form')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 568, in _tag_record
+    f_val = self.id_get(f_ref, raise_if_not_found=nodeattr2bool(rec, 'forcecreate', True))
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 681, in id_get
+    res = self.model_id_get(id_str, raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 687, in model_id_get
+    return self.env['ir.model.data']._xmlid_to_res_model_res_id(id_str, raise_if_not_found=raise_if_not_found)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2023, in _xmlid_to_res_model_res_id
+    return self._xmlid_lookup(xmlid)[1:3]
+  File "<decorator-gen-40>", line 2, in _xmlid_lookup
+  File "/usr/lib/python3/dist-packages/odoo/tools/cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_model.py", line 2016, in _xmlid_lookup
+    raise ValueError('External ID not found in the system: %s' % xmlid)
+ValueError: External ID not found in the system: herenciav1.view_music_songs_form
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1994, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1584, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 133, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1611, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1815, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 154, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 697, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 46, in call_button
+    action = self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 33, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 461, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 448, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-74>", line 2, in button_immediate_install
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 76, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 491, in button_immediate_install
+    return self._button_immediate_function(type(self).button_install)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 615, in _button_immediate_function
+    registry = modules.registry.Registry.new(self._cr.dbname, update_module=True)
+  File "<decorator-gen-14>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 90, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 488, in load_modules
+    processed_modules += load_marked_modules(cr, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 372, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 231, in load_module_graph
+    load_data(cr, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 71, in load_data
+    tools.convert_file(cr, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 763, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 829, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 749, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 698, in _tag_root
+    f(rec)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 711, in _tag_root
+    raise ParseError('while parsing %s:%s, somewhere inside\n%s' % (
+odoo.tools.convert.ParseError: while parsing /mnt/extra-addons/herenciav1/views/templates.xml:3, somewhere inside
+<record id="view_duration_music_form" model="ir.ui.view">
+            <field name="name">view.music.songs</field>
+            <field name="model">herenciav1.music</field>
+            <field name="inherit_id" ref="view_music_songs_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='artists']" position="after">
+                    <field name="duration"/>
+                </xpath>
+            </field>
+        </record>

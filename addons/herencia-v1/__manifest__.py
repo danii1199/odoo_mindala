@@ -6,7 +6,7 @@
         Prueba de la primera herencia""",
 
     'description': """
-         Prueba de la primera herencia...
+         Prueba de la primera herencia...  
     """,
 
     'author': "dmanzano",

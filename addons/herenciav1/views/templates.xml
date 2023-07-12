@@ -1,14 +1,5 @@
 <odoo>
     <data>
-        <record id="herenciav1_canciones_form_view" model="ir.ui.view">
-            <field name="name">herenciav1.canciones</field>
-            <field name="model">herenciav1.canciones</field>
-            <field name="inherit_id" ref="music.view_music_songs_form" />
-            <field name="arch" type="xml">
-                <field name="artists" position="after">
-                    <field name="duration" />
-                </field>
-            </field>
-        </record>
+
     </data>
 </odoo>

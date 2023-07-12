@@ -1,16 +1,14 @@
-<odoo>
+<openerp>
     <data>
-        <record id="inherited_model_view_form" model="ir.ui.view">
-            <field name="name">inherited.model.form.inherit.test</field>
-            <field name="model">inherited.model</field>
-            <field name="inherit_id" ref="music.inherited_model_view_form" />
+        <record id="music_songs_form_view_inherited" model="ir.ui.view">
+            <field name="name">music.songs.form.view.inherited</field>
+            <field name="model">music.songs</field>
+            <field name="inherit_id" ref="music.view_music_songs_form" />
             <field name="arch" type="xml">
-                <!-- find field description and add the field
-             new_field after it -->
-                <xpath expr="//field[@name='description']" position="after">
-                    <field name="new_field" />
+                <xpath expr="//field[@name='record']" position="replace">
+                    <field name="duration"></field>
                 </xpath>
             </field>
         </record>
     </data>
-</odoo>
+</openerp>

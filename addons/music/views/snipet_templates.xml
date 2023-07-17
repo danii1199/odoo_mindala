@@ -1,6 +1,6 @@
 <odoo>
 
-    <template id="dynamic_filter_template_music_songs_ffl" name="Canciones" priority="2">
+    <template id="dynamic_filter_template_music_songs_ffl" name="Listado Canciones" priority="2">
         <t t-foreach="records" t-as="data" class="s_blog_posts_post">
             <t t-set="record" t-value="data['_record']" />
             <div class="o_carousel_product_card bg-transparent w-100 card border-0">
@@ -19,10 +19,10 @@
                     class="o_carousel_product_card_body d-flex flex-wrap flex-column justify-content-between h-100 p-3">
                     <div class="h6 card-title" t-field="record.name" />
                     <div>
-                        <div>
+                        <div class="m4p_record" name="record">
                             <span t-field="record.record" />
                         </div>
-                        <div>
+                        <div name="artists">
                             <span t-field="record.artists" />
                         </div>
                     </div>
@@ -62,7 +62,7 @@
         </xpath>
     </template>
 
-    <template id="dynamic_filter_template_music_artists_hjl" name="Artistas" priority="1">
+    <template id="dynamic_filter_template_music_artists_hjl" name="Listado Artistas" priority="1">
         <div t-foreach="records" t-as="data" class="s_blog_posts_post">
             <t t-set="record" t-value="data['_record']" />
             <div class="o_carousel_product_card bg-transparent w-100 card border-0">

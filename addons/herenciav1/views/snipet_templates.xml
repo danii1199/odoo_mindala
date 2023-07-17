@@ -1,0 +1,32 @@
+<odoo>
+    <template id="dynamic_filter_template_music_songs_nueva_prueba" name="Canciones_prueba_2"
+        priority="2">
+        <t t-foreach="records" t-as="data" class="s_blog_posts_post">
+            <t t-set="record" t-value="data['_record']" />
+            <div class="o_carousel_product_card bg-transparent w-100 card border-0">
+                <div class="h6 card-title" t-field="record.name" />
+                <a class="o_carousel_product_img_link o_dynamic_product_hovered stretched-link"
+                    t-att-href="'/canciones/%s' % (slug(record))">
+                    <div class="overflow-hidden rounded">
+                        <img
+                            class="card-img-top o_img_product_square o_img_product_cover h-auto"
+                            loading="lazy"
+                            t-att-src="image_data_uri(record.image)"
+                            t-att-alt="record.name" />
+                    </div>
+                </a>
+                <div
+                    class="o_carousel_product_card_body d-flex flex-wrap flex-column justify-content-between h-100 p-3">
+                    <div>
+                        <div class="m4p_record" name="record">
+                            <span t-field="record.record" />
+                        </div>
+                        <div name="artists">
+                            <span t-field="record.artists" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

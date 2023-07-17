@@ -5,7 +5,7 @@
             <field name="model">music.songs</field>
             <field name="inherit_id" ref="music.view_music_songs_form" />
             <field name="arch" type="xml">
-                <xpath expr="//form" position="replace">
+                <!-- <xpath expr="//form " position="replace">
                     <sheet>
                         <group name="group_top">
                             <group name="group_left">
@@ -14,6 +14,9 @@
                             </group>
                         </group>
                     </sheet>
+                </xpath> -->
+                <xpath expr="//field[@name='artists'] " position="after">
+                    <field name="duration" />
                 </xpath>
             </field>
         </record>

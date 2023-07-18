@@ -28,8 +28,8 @@
         # 'security/ir.model.access.csv',
         'views/songs.xml',
         'views/artists.xml',
-        'views/snipet_filter.xml',
-        'views/snipet_templates.xml',
+        'views/snippets/snipet_filter.xml',
+        'views/snippets/snipet_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

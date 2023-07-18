@@ -11,3 +11,4 @@ class Songs(models.Model):
     artists = fields.Many2many(string="Artistas",comodel_name = "music.artists")
     record = fields.Char(string="Álbum")
     image = fields.Binary(string="Foto")
+    template = fields.Char(string="Plantilla")

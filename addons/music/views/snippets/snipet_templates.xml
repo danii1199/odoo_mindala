@@ -34,29 +34,31 @@
     <template id="single_song" name="Cancion">
         <t t-call="website.layout">
             <div class="container">
-                <div class="oe_structure o_editable">
-                    <div class="d-flex justify-content-center">
-                        <div class="card overflow-hidden shadow rounded-4 border-0 m-5 w-50">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="p-5">
-                                        <h2 class="fw-bolder" t-field="song.name"></h2>
-                                        <p t-field="song.record" />
-                                        <t t-foreach="song.artists" t-as="artist_tag">
-                                            <a class="badge text-primary border me-1"
-                                                t-att-href="'/artistas/%s' % (slug(artist_tag))"
-                                                t-esc="artist_tag.name" />
-                                        </t>
+                <section class="music_songs">
+                    <div class="oe_structure o_editable">
+                        <div class="d-flex justify-content-center">
+                            <div class="card overflow-hidden shadow rounded-4 border-0 m-5 w-50">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder" t-field="song.name"></h2>
+                                            <p t-field="song.record" />
+                                            <t t-foreach="song.artists" t-as="artist_tag">
+                                                <a class="badge text-primary border me-1"
+                                                    t-att-href="'/artistas/%s' % (slug(artist_tag))"
+                                                    t-esc="artist_tag.name" />
+                                            </t>
+                                        </div>
+                                        <img class="img-fluid"
+                                            style="height:400px"
+                                            t-att-src="image_data_uri(song.image)"
+                                            t-att-alt="song.record" />
                                     </div>
-                                    <img class="img-fluid"
-                                        style="height:400px"
-                                        t-att-src="image_data_uri(song.image)"
-                                        t-att-alt="song.record" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </t>
     </template>
@@ -140,4 +142,6 @@
             </t>
         </xpath>
     </template>
+
+
 </odoo>

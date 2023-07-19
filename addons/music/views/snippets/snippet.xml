@@ -1,32 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="one_song" name="Canción 1">
-        <section class="trending">
-            <div class="container">
-                <h2 t-field="song.name"></h2>
-            </div>
-        </section>
-    </template>
-
-    <!-- Snippet-->
-    <template id="custom_snippet" inherit_id="website.snippets" name="Canciones">
-        <xpath expr="//div[@id='snippet_structure']" position="before">
-            <div id="snippet_structure" class="o_panel">
-                <div class="o_panel_header">Mindala</div>
-                <div class="o_panel_body">
-                    <t t-snippet="music.one_song" />
-                </div>
-            </div>
-        </xpath>
-    </template>
-    <!-- Options-->
-    <template id="custom_snippet_options" inherit_id="website.snippet_options">
+    <template id="snippet_options" inherit_id="website.snippet_options" name="Blog snippet options">
         <xpath expr="." position="inside">
-            <div data-selector="section.trending">
-                <we-select string="Templates">
-                    <we-button data-select-class="new">new</we-button>
-                    <we-button data-select-class="d-none">None</we-button>
-                    <we-button data-select-class="custom">custom</we-button>
+            <div data-selector="section.music_songs" data-page-options="true"
+                groups="website.group_website_designer" data-no-check="true"
+                string="Diseño canciones">
+                <we-select string="Width">
+                    <we-button data-customize-website-views="music.single_song"
+                        data-select-class="w-25">25%</we-button>
+                    <we-button data-customize-website-views="music.single_song"
+                        data-select-class="w-50">50%</we-button>
+                    <we-button data-customize-website-views="music.single_song"
+                        data-select-class="w-75">75%</we-button>
+                    <we-button data-customize-website-views="music.single_song"
+                        data-select-class="w-100">100%
+                    </we-button>
                 </we-select>
             </div>
         </xpath>

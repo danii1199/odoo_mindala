@@ -22,7 +22,7 @@ from odoo.tools import sql
 class WebsiteBlog(http.Controller):
     _blog_post_per_page = 12  # multiple of 2,3,4
     _post_comment_per_page = 10
-
+    print("HOLA")
     def tags_list(self, tag_ids, current_tag):
         tag_ids = list(tag_ids)  # required to avoid using the same list
         if current_tag in tag_ids:
@@ -177,10 +177,10 @@ class WebsiteBlog(http.Controller):
         '/blog/page/<int:page>',
         '/blog/tag/<string:tag>',
         '/blog/tag/<string:tag>/page/<int:page>',
-        '''/blog/<model("blog.m4pnews"):blog>''',
-        '''/blog/<model("blog.m4pnews"):blog>/page/<int:page>''',
-        '''/blog/<model("blog.m4pnews"):blog>/tag/<string:tag>''',
-        '''/blog/<model("blog.m4pnews"):blog>/tag/<string:tag>/page/<int:page>''',
+        '''/blog/<model("blog.blog"):blog>''',
+        '''/blog/<model("blog.blog"):blog>/page/<int:page>''',
+        '''/blog/<model("blog.blog"):blog>/tag/<string:tag>''',
+        '''/blog/<model("blog.blog"):blog>/tag/<string:tag>/page/<int:page>''',
     ], type='http', auth="public", website=True, sitemap=True)
     def blog(self, blog=None, tag=None, page=1, search=None, **opt):
         Blog = request.env['blog.blog']

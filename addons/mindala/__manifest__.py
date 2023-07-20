@@ -39,22 +39,22 @@
     
     'assets': {
         'website.assets_wysiwyg': [
-            # 'mindala/static/src/js/options.js',
-            # 'mindala/static/src/js/wysiwyg.js',
-            # 'mindala/static/src/snippets/s_blog_posts/options.js',
-            # 'mindala/static/src/js/snippets.editor.js',
+            'mindala/static/src/js/options.js',
+            'mindala/static/src/js/wysiwyg.js',
+            'mindala/static/src/snippets/s_blog_posts/options.js',
+            'mindala/static/src/js/snippets.editor.js',
         ],
         'website.assets_editor': [
             # 'mindala/static/src/js/tours/website_blog.js',
-            # 'mindala/static/src/js/systray_items/*.js',
+            'mindala/static/src/js/systray_items/*.js',
         ],
         'web.assets_tests': [
-            # 'mindala/static/tests/**/*',
+            'mindala/static/tests/**/*',
         ],
         'web.assets_frontend': [
-            # 'mindala/static/src/scss/website_blog.scss',
-            # 'mindala/static/src/js/contentshare.js',
-            # 'mindala/static/src/js/website_blog.js',
+            'mindala/static/src/scss/website_blog.scss',
+            'mindala/static/src/js/contentshare.js',
+            'mindala/static/src/js/website_blog.js',
         ],
     },
 }

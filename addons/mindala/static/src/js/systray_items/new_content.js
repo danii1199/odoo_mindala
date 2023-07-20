@@ -7,9 +7,9 @@ patch(NewContentModal.prototype, 'mindala_new_content', {
     setup() {
         this._super();
 
-        const newBlogElement = this.state.newContentElements.find(element => element.moduleXmlId === 'base.module_mindala');
+        const newBlogElement = this.state.newContentElements.find(element => element.moduleXmlId === 'base.mindala_blog');
         newBlogElement.createNewContent = () => this.onAddContent('mindala.blog_post_action_add', true);
         newBlogElement.status = MODULE_STATUS.INSTALLED;
-        newBlogElement.model = 'blog.m4pnews';
+        newBlogElement.model = 'mindala.m4pnews';
     },
 });

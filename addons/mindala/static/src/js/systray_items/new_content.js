@@ -7,7 +7,7 @@ patch(NewContentModal.prototype, 'mindala_m4pnews_new_content', {
     setup() {
         this._super();
 
-        const newBlogElement = this.state.newContentElements.find(element => element.moduleXmlId === 'base.module_website_blog_news');
+        const newBlogElement = this.state.newContentElements.find(element => element.moduleXmlId === 'base.module_website_blog_news_prueba');
         newBlogElement.createNewContent = () => this.onAddContent('mindala.blog_m4pnews_action_add', true);
         newBlogElement.status = MODULE_STATUS.INSTALLED;
         newBlogElement.model = 'blog.m4pnews';

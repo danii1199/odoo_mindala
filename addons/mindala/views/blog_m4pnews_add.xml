@@ -8,15 +8,15 @@
             <form js_class="website_new_content_form">
                 <group>
                     <field name="website_url" invisible="1" />
-                    <field name="blog_id" string="Select Blog" />
-                    <field name="name" placeholder="Blog Post Title" />
+                    <field name="blog_id" string="Selecciona un blog" />
+                    <field name="name" string="Título de la noticia" />
                 </group>
             </form>
         </field>
     </record>
 
     <record id="blog_m4pnews_action_add" model="ir.actions.act_window">
-        <field name="name">New Blog News</field>
+        <field name="name">Añadir noticias</field>
         <field name="res_model">blog.m4pnews</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>

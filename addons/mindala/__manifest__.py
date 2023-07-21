@@ -18,7 +18,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'website',
+    'category': 'Website/Website',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -41,7 +41,7 @@
         'website.assets_wysiwyg': [
         ],
         'website.assets_editor': [
-            'mindala/static/src/js/tours/mindala.js',
+            #'mindala/static/src/js/tours/mindala.js',
             'mindala/static/src/js/systray_items/*.js',
         ],
         'web.assets_tests': [

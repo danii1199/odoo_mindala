@@ -18,17 +18,19 @@ from odoo.tools import html2plaintext
 from odoo.tools.misc import get_lang
 from odoo.tools import sql
 
+
 class WebsiteBlog(http.Controller):
-    _blog_post_per_page = 12  # multiple of 2,3,4
+    _blog_post_per_page = 12 
     _post_comment_per_page = 10
+
     def tags_list(self, tag_ids, current_tag):
-        tag_ids = list(tag_ids)  # required to avoid using the same list
+        tag_ids = list(tag_ids)  
         if current_tag in tag_ids:
             tag_ids.remove(current_tag)
         else:
             tag_ids.append(current_tag)
         tag_ids = request.env['blog.tag'].browse(tag_ids)
-        return ','.join(slug(tag) for tag in tag_ids)
+        return ','.join(slug(tag) for tag in tag_ids) 
 
     def nav_list(self, blog=None):
         dom = blog and [('blog_id', '=', blog.id)] or []
@@ -55,11 +57,9 @@ class WebsiteBlog(http.Controller):
         return OrderedDict((year, [m for m in months]) for year, months in itertools.groupby(groups, lambda g: g['year']))
 
     def _prepare_blog_values(self, blogs, blog=False, date_begin=False, date_end=False, tags=False, state=False, page=False, search=None):
-        """ Prepare all values to display the blogs index page or one specific blog"""
         BlogPost = request.env['blog.m4pnews']
         BlogTag = request.env['blog.tag']
 
-        # prepare domain
         domain = request.website.website_domain()
 
         if blog:
@@ -75,7 +75,7 @@ class WebsiteBlog(http.Controller):
             if fixed_tag_slug != tags:
                 path = request.httprequest.full_path
                 new_url = path.replace("/tag/%s" % tags, fixed_tag_slug and "/tag/%s" % fixed_tag_slug or "", 1)
-                if new_url != path:  # check that really replaced and avoid loop
+                if new_url != path: 
                     return request.redirect(new_url, 301)
             domain += [('tag_ids', 'in', active_tags.ids)]
 
@@ -94,7 +94,6 @@ class WebsiteBlog(http.Controller):
         use_cover = request.website.is_view_active('mindala.opt_blog_cover_post')
         fullwidth_cover = request.website.is_view_active('mindala.opt_blog_cover_post_fullwidth_design')
 
-        # if blog, we show blog title, if use_cover and not fullwidth_cover we need pager + latest always
         offset = (page - 1) * self._blog_post_per_page
         if not blog and use_cover and not fullwidth_cover and not tags and not date_begin and not date_end and not search:
             offset += 1
@@ -144,9 +143,7 @@ class WebsiteBlog(http.Controller):
         tag_category = tools.lazy(lambda: sorted(all_tags.mapped('category_id'), key=lambda category: category.name.upper()))
         other_tags = tools.lazy(lambda: sorted(all_tags.filtered(lambda x: not x.category_id), key=lambda tag: tag.name.upper()))
         nav_list = tools.lazy(self.nav_list)
-        # for performance prefetch the first post with the others
         post_ids = (first_post | posts).ids
-        # and avoid accessing related blogs one by one
         posts.blog_id
 
         return {
@@ -170,7 +167,7 @@ class WebsiteBlog(http.Controller):
             'original_search': fuzzy_search_term and search,
         }
 
-    @http.route([
+    """ @http.route([
         '/blog',
         '/blog/page/<int:page>',
         '/blog/tag/<string:tag>',
@@ -182,20 +179,6 @@ class WebsiteBlog(http.Controller):
     ], type='http', auth="public", website=True, sitemap=True)
     def blog(self, blog=None, tag=None, page=1, search=None, **opt):
         Blog = request.env['blog.blog']
-
-        # TODO adapt in master. This is a fix for templates wrongly using the
-        # 'blog_url' QueryURL which is defined below. Indeed, in the case where
-        # we are rendering a blog page where no specific blog is selected we
-        # define(d) that as `QueryURL('/blog', ['tag'], ...)` but then some
-        # parts of the template used it like this: `blog_url(blog=XXX)` thus
-        # generating an URL like "/blog?blog=blog.blog(2,)". Adding "blog" to
-        # the list of params would not be right as would create "/blog/blog/2"
-        # which is still wrong as we want "/blog/2". And of course the "/blog"
-        # prefix in the QueryURL definition is needed in case we only specify a
-        # tag via `blog_url(tab=X)` (we expect /blog/tag/X). Patching QueryURL
-        # or making blog_url a custom function instead of a QueryURL instance
-        # could be a solution but it was judged not stable enough. We'll do that
-        # in master. Here we only support "/blog?blog=blog.blog(2,)" URLs.
         if isinstance(blog, str):
             blog = Blog.browse(int(re.search(r'\d+', blog)[0]))
             if not blog.exists():
@@ -210,7 +193,6 @@ class WebsiteBlog(http.Controller):
         date_begin, date_end, state = opt.get('date_begin'), opt.get('date_end'), opt.get('state')
 
         if tag and request.httprequest.method == 'GET':
-            # redirect get tag-1,tag-2 -> get tag-1
             tags = tag.split(',')
             if len(tags) > 1:
                 url = QueryURL('' if blog else '/blog', ['blog', 'tag'], blog=blog, tag=tags[0], date_begin=date_begin, date_end=date_end, search=search)()
@@ -218,7 +200,6 @@ class WebsiteBlog(http.Controller):
 
         values = self._prepare_blog_values(blogs=blogs, blog=blog, date_begin=date_begin, date_end=date_end, tags=tag, state=state, page=page, search=search)
 
-        # in case of a redirection need by `_prepare_blog_values` we follow it
         if isinstance(values, werkzeug.wrappers.Response):
             return values
 
@@ -245,25 +226,13 @@ class WebsiteBlog(http.Controller):
     ], type='http', auth="public", website=True, sitemap=False)
     def old_blog_post(self, blog, blog_post, tag_id=None, page=1, enable_editor=None, **post):
         # Compatibility pre-v14
-        return request.redirect(_build_url_w_params("/blog/%s/%s" % (slug(blog), slug(blog_post)), request.params), code=301)
+        return request.redirect(_build_url_w_params("/blog/%s/%s" % (slug(blog), slug(blog_post)), request.params), code=301) """
 
     @http.route([
         '''/blog/<model("blog.blog"):blog>/<model("blog.m4pnews", "[('blog_id','=',blog.id)]"):blog_post>''',
     ], type='http', auth="public", website=True, sitemap=True)
     def blog_post(self, blog, blog_post, tag_id=None, page=1, enable_editor=None, **post):
-        """ Prepare all values to display the blog.
-
-        :return dict values: values for the templates, containing
-
-         - 'blog_post': browse of the current post
-         - 'blog': browse of the current blog
-         - 'blogs': list of browse records of blogs
-         - 'tag': current tag, if tag_id in parameters
-         - 'tags': all tags, for tag-based navigation
-         - 'pager': a pager on the comments
-         - 'nav_list': a dict [year][month] for archives navigation
-         - 'next_post': next blog post, to direct the user towards the next interesting post
-        """
+        #return request.render("HOLA")
         BlogPost = request.env['blog.m4pnews']
         date_begin, date_end = post.get('date_begin'), post.get('date_end')
 
@@ -279,8 +248,6 @@ class WebsiteBlog(http.Controller):
             return request.redirect("/blog/%s/%s" % (slug(blog_post.blog_id), slug(blog_post)), code=301)
 
         tags = request.env['blog.tag'].search([])
-
-        # Find next Post
         blog_post_domain = [('blog_id', '=', blog.id)]
         if not request.env.user.has_group('website.group_website_designer'):
             blog_post_domain += [('post_date', '<=', fields.Datetime.now())]
@@ -290,7 +257,6 @@ class WebsiteBlog(http.Controller):
         if blog_post not in all_post:
             return request.redirect("/blog/%s" % (slug(blog_post.blog_id)))
 
-        # should always return at least the current post
         all_post_ids = all_post.ids
         current_blog_post_index = all_post_ids.index(blog_post.id)
         nb_posts = len(all_post_ids)

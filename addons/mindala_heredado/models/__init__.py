@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-# from . import m4pnews
+from . import m4pnews
+

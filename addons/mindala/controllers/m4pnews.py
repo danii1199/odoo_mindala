@@ -18,10 +18,8 @@ from odoo.tools import html2plaintext
 from odoo.tools.misc import get_lang
 from odoo.tools import sql
 
-
-class WebsiteBlog(http.Controller):
-    _blog_post_per_page = 12  # multiple of 2,3,4
-    _post_comment_per_page = 10
+class WebsiteNews(http.Controller):
+    _blog_post_per_page = 10
 
     def tags_list(self, tag_ids, current_tag):
         tag_ids = list(tag_ids)  # required to avoid using the same list
@@ -31,12 +29,12 @@ class WebsiteBlog(http.Controller):
             tag_ids.append(current_tag)
         tag_ids = request.env['blog.tag'].browse(tag_ids)
         return ','.join(slug(tag) for tag in tag_ids)
-
+    
     def nav_list(self, blog=None):
         dom = blog and [('blog_id', '=', blog.id)] or []
         if not request.env.user.has_group('website.group_website_designer'):
             dom += [('post_date', '<=', fields.Datetime.now())]
-        groups = request.env['blog.m4pnews']._read_group_raw(
+        groups = request.env['blog.post']._read_group_raw(
             dom,
             ['name', 'post_date'],
             groupby=["post_date"], orderby="post_date desc")
@@ -57,8 +55,7 @@ class WebsiteBlog(http.Controller):
         return OrderedDict((year, [m for m in months]) for year, months in itertools.groupby(groups, lambda g: g['year']))
 
     def _prepare_blog_values(self, blogs, blog=False, date_begin=False, date_end=False, tags=False, state=False, page=False, search=None):
-        """ Prepare all values to display the blogs index page or one specific blog"""
-        BlogPost = request.env['blog.post']
+        BlogPost = request.env['blog.m4pnews']
         BlogTag = request.env['blog.tag']
 
         # prepare domain
@@ -93,8 +90,8 @@ class WebsiteBlog(http.Controller):
         else:
             domain += [("post_date", "<=", fields.Datetime.now())]
 
-        use_cover = request.website.is_view_active('website_blog.opt_blog_cover_post')
-        fullwidth_cover = request.website.is_view_active('website_blog.opt_blog_cover_post_fullwidth_design')
+        use_cover = request.website.is_view_active('mindala.opt_blog_cover_post')
+        fullwidth_cover = request.website.is_view_active('mindala.opt_blog_cover_post_fullwidth_design')
 
         # if blog, we show blog title, if use_cover and not fullwidth_cover we need pager + latest always
         offset = (page - 1) * self._blog_post_per_page
@@ -173,31 +170,73 @@ class WebsiteBlog(http.Controller):
         }
 
     @http.route([
-        '/blog',
-        '/blog/page/<int:page>',
-        '/blog/tag/<string:tag>',
-        '/blog/tag/<string:tag>/page/<int:page>',
-        '''/blog/<model("blog.blog"):blog>''',
-        '''/blog/<model("blog.blog"):blog>/page/<int:page>''',
-        '''/blog/<model("blog.blog"):blog>/tag/<string:tag>''',
-        '''/blog/<model("blog.blog"):blog>/tag/<string:tag>/page/<int:page>''',
+        '''/blog/noticias-<int:id_blog>/<model("blog.m4pnews", "[('blog_id','=',blog.id)]"):blog_m4pnews>''',
     ], type='http', auth="public", website=True, sitemap=True)
-    def blog(self, blog=None, tag=None, page=1, search=None, **opt):
-        Blog = request.env['blog.blog']
+    def blog_m4pnews(self,id_blog,blog_m4pnews,tag_id=None,page=1,enable_editor=None, **post):
+        blog = request.env['blog.blog'].browse(int(id_blog))
+        BlogPost = request.env['blog.m4pnews']
+        date_begin, date_end = post.get('date_begin'), post.get('date_end')
 
-        # TODO adapt in master. This is a fix for templates wrongly using the
-        # 'blog_url' QueryURL which is defined below. Indeed, in the case where
-        # we are rendering a blog page where no specific blog is selected we
-        # define(d) that as `QueryURL('/blog', ['tag'], ...)` but then some
-        # parts of the template used it like this: `blog_url(blog=XXX)` thus
-        # generating an URL like "/blog?blog=blog.blog(2,)". Adding "blog" to
-        # the list of params would not be right as would create "/blog/blog/2"
-        # which is still wrong as we want "/blog/2". And of course the "/blog"
-        # prefix in the QueryURL definition is needed in case we only specify a
-        # tag via `blog_url(tab=X)` (we expect /blog/tag/X). Patching QueryURL
-        # or making blog_url a custom function instead of a QueryURL instance
-        # could be a solution but it was judged not stable enough. We'll do that
-        # in master. Here we only support "/blog?blog=blog.blog(2,)" URLs.
+        domain = request.website.website_domain()
+        blogs = blog.search(domain, order="create_date, id asc")
+
+        tag = None
+        if tag_id:
+            tag = request.env['blog.tag'].browse(int(tag_id))
+        blog_url = QueryURL('', ['blog', 'tag'], blog=blog_m4pnews.blog_id, tag=tag, date_begin=date_begin, date_end=date_end)
+
+        if not blog_m4pnews.blog_id.id == blog.id:
+            return request.redirect("/blog/%s/%s" % (slug(blog_m4pnews.blog_id), slug(blog_m4pnews)), code=301)
+
+        tags = request.env['blog.tag'].search([])
+
+        # Find next Post
+        blog_m4pnews_domain = [('blog_id', '=', blog.id)]
+        if not request.env.user.has_group('website.group_website_designer'):
+            blog_m4pnews_domain += [('post_date', '<=', fields.Datetime.now())]
+
+        all_post = BlogPost.search(blog_m4pnews_domain)
+
+        if blog_m4pnews not in all_post:
+            return request.redirect("/blog/%s" % (slug(blog_m4pnews.blog_id)))
+
+        # should always return at least the current post
+        all_post_ids = all_post.ids
+        current_blog_post_index = all_post_ids.index(blog_m4pnews.id)
+        nb_posts = len(all_post_ids)
+        next_post_id = all_post_ids[(current_blog_post_index + 1) % nb_posts] if nb_posts > 1 else None
+        next_post = next_post_id and BlogPost.browse(next_post_id) or False
+
+        values = {
+            'tags': tags,
+            'tag': tag,
+            'blog': blog,
+            'blog_post': blog_m4pnews,
+            'blogs': blogs,
+            'main_object': blog_m4pnews,
+            'nav_list': self.nav_list(blog),
+            'enable_editor': enable_editor,
+            'next_post': next_post,
+            'date': date_begin,
+            'blog_url': blog_url,
+        }
+        response = request.render("mindala.blog_post_complete", values)
+
+        if blog_m4pnews.id not in request.session.get('posts_viewed', []):
+            if sql.increment_fields_skiplock(blog_m4pnews, 'visits'):
+                if not request.session.get('posts_viewed'):
+                    request.session['posts_viewed'] = []
+                request.session['posts_viewed'].append(blog_m4pnews.id)
+                request.session.touch()
+        return response 
+
+
+    @http.route([
+        '''/blog/noticias-<int:id_blog>''',
+    ], type='http', auth="public", website=True, sitemap=True)
+    def blog(self, id_blog=None, tag=None, page=1, search=None, **opt):
+        Blog = request.env['blog.blog']
+        blog = request.env['blog.blog'].browse(int(id_blog))
         if isinstance(blog, str):
             blog = Blog.browse(int(re.search(r'\d+', blog)[0]))
             if not blog.exists():
@@ -230,94 +269,4 @@ class WebsiteBlog(http.Controller):
         else:
             values['blog_url'] = QueryURL('/blog', ['tag'], date_begin=date_begin, date_end=date_end, search=search)
 
-        return request.render("website_blog.blog_post_short", values)
-
-    @http.route(['''/blog/<model("blog.blog"):blog>/feed'''], type='http', auth="public", website=True, sitemap=True)
-    def blog_feed(self, blog, limit='15', **kwargs):
-        v = {}
-        v['blog'] = blog
-        v['base_url'] = blog.get_base_url()
-        v['posts'] = request.env['blog.post'].search([('blog_id', '=', blog.id)], limit=min(int(limit), 50), order="post_date DESC")
-        v['html2plaintext'] = html2plaintext
-        r = request.render("website_blog.blog_feed", v, headers=[('Content-Type', 'application/atom+xml')])
-        return r
-
-    @http.route([
-        '''/blog/<model("blog.blog"):blog>/post/<model("blog.post", "[('blog_id','=',blog.id)]"):blog_post>''',
-    ], type='http', auth="public", website=True, sitemap=False)
-    def old_blog_post(self, blog, blog_post, tag_id=None, page=1, enable_editor=None, **post):
-        # Compatibility pre-v14
-        return request.redirect(_build_url_w_params("/blog/%s/%s" % (slug(blog), slug(blog_post)), request.params), code=301)
-
-    @http.route([
-        '''/blog/<model("blog.blog"):blog>/<model("blog.post", "[('blog_id','=',blog.id)]"):blog_post>''',
-    ], type='http', auth="public", website=True, sitemap=True)
-    def blog_post(self, blog, blog_post, tag_id=None, page=1, enable_editor=None, **post):
-        """ Prepare all values to display the blog.
-
-        :return dict values: values for the templates, containing
-
-         - 'blog_post': browse of the current post
-         - 'blog': browse of the current blog
-         - 'blogs': list of browse records of blogs
-         - 'tag': current tag, if tag_id in parameters
-         - 'tags': all tags, for tag-based navigation
-         - 'pager': a pager on the comments
-         - 'nav_list': a dict [year][month] for archives navigation
-         - 'next_post': next blog post, to direct the user towards the next interesting post
-        """
-        BlogPost = request.env['blog.post']
-        date_begin, date_end = post.get('date_begin'), post.get('date_end')
-
-        domain = request.website.website_domain()
-        blogs = blog.search(domain, order="create_date, id asc")
-
-        tag = None
-        if tag_id:
-            tag = request.env['blog.tag'].browse(int(tag_id))
-        blog_url = QueryURL('', ['blog', 'tag'], blog=blog_post.blog_id, tag=tag, date_begin=date_begin, date_end=date_end)
-
-        if not blog_post.blog_id.id == blog.id:
-            return request.redirect("/blog/%s/%s" % (slug(blog_post.blog_id), slug(blog_post)), code=301)
-
-        tags = request.env['blog.tag'].search([])
-
-        # Find next Post
-        blog_post_domain = [('blog_id', '=', blog.id)]
-        if not request.env.user.has_group('website.group_website_designer'):
-            blog_post_domain += [('post_date', '<=', fields.Datetime.now())]
-
-        all_post = BlogPost.search(blog_post_domain)
-
-        if blog_post not in all_post:
-            return request.redirect("/blog/%s" % (slug(blog_post.blog_id)))
-
-        # should always return at least the current post
-        all_post_ids = all_post.ids
-        current_blog_post_index = all_post_ids.index(blog_post.id)
-        nb_posts = len(all_post_ids)
-        next_post_id = all_post_ids[(current_blog_post_index + 1) % nb_posts] if nb_posts > 1 else None
-        next_post = next_post_id and BlogPost.browse(next_post_id) or False
-
-        values = {
-            'tags': tags,
-            'tag': tag,
-            'blog': blog,
-            'blog_post': blog_post,
-            'blogs': blogs,
-            'main_object': blog_post,
-            'nav_list': self.nav_list(blog),
-            'enable_editor': enable_editor,
-            'next_post': next_post,
-            'date': date_begin,
-            'blog_url': blog_url,
-        }
-        response = request.render("website_blog.blog_post_complete", values)
-
-        if blog_post.id not in request.session.get('posts_viewed', []):
-            if sql.increment_fields_skiplock(blog_post, 'visits'):
-                if not request.session.get('posts_viewed'):
-                    request.session['posts_viewed'] = []
-                request.session['posts_viewed'].append(blog_post.id)
-                request.session.touch()
-        return response
+        return request.render("mindala.blog_post_short", values)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mindala",
+    'name': "Mindala Heredado",
 
     'icon': 'mindala/static/description/icon.png',
     'icon_image': 'mindala/static/description/icon.png',
@@ -26,9 +26,11 @@
 
     # always loaded
     'data': [
-        'views/m4pcompany/m4pcompany_add.xml',
-        'views/m4pcompany/m4pcompany_views.xml',
-
+        'views/blog_m4pnews_add.xml',
+        'views/website_pages_views.xml',
+        'views/website_blog_templates.xml',
+        'views/website_blog_posts_loop.xml',
+        'views/website_blog_components.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -40,7 +42,7 @@
         ],
         'website.assets_editor': [
             #'mindala/static/src/js/tours/mindala.js',
-            # 'mindala/static/src/js/systray_items/*.js',
+            'mindala/static/src/js/systray_items/*.js',
         ],
         'web.assets_tests': [
         ],

@@ -28,11 +28,26 @@
         # 'security/ir.model.access.csv',
         'views/songs.xml',
         'views/artists.xml',
-        'views/snipet_filter.xml',
-        'views/snipet_templates.xml',
+        'views/snippets/snipet_filter.xml',
+        'views/snippets/snipet_templates.xml',
+        'views/snippets/snippet.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    
+    'assets': {
+        'website.assets_wysiwyg': [
+           
+        ],
+        'website.assets_editor': [
+        ],
+        'web.assets_tests': [
+            
+        ],
+        'web.assets_frontend': [
+            
+        ],
+    },
 }

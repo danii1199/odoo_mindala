@@ -25,7 +25,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        'views/snipet_templates.xml',
         'reports/visit.xml'
     ],
     # only loaded in demonstration mode

@@ -11,6 +11,7 @@
                             <group name="group_left">
                                 <field name="name" />
                                 <field name="artists" widget="many2many_tags" />
+                                <field name="template" />
                             </group>
                             <group name="group_right">
                                 <field name="record" />
@@ -92,5 +93,25 @@
             sequence="0" action="action_music_songs_view" />
         <menuitem id="menu_music_artists" name="Artistas" parent="menu_music_options"
             sequence="0" action="action_music_artists_view" />
+
+        <!-- Menu del web-->
+        <menuitem id="menu_blog_post_pages"
+            parent="website.menu_content"
+            sequence="20"
+            name="Canciones"
+            action="action_music_songs_view" />
+
+        <!-- Crear nuevo-->
+        <record id="blog_post_view_form_add" model="ir.ui.view">
+            <field name="name">blog.post.view.form.add</field>
+            <field name="model">music.songs</field>
+            <field name="arch" type="xml">
+                <form js_class="website_new_content_form">
+                    <group>
+                        <field name="name" placeholder="Nombre de la canción" />
+                    </group>
+                </form>
+            </field>
+        </record>
     </data>
 </odoo>

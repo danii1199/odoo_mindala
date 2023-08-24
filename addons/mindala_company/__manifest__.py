@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mindala",
+    'name': "Mindala Empresas",
 
-    'icon': 'mindala/static/description/icon.png',
+    'icon': 'mindala_company/static/description/icon.png',
     'icon_image': 'mindala/static/description/icon.png',
     
     'summary': """
@@ -22,10 +22,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web', 'website_partner', 'website_blog'],
+    'depends': ['base', 'web', 'website_partner','mindala'],
 
     # always loaded
     'data': [
+        'views/m4pcompany/m4pcompany_add.xml',
+        'views/m4pcompany/m4pcompany_views.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

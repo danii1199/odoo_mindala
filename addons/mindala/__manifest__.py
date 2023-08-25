@@ -22,10 +22,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web', 'website_partner', 'website_blog'],
+    'depends': ['website_partner'],
+
 
     # always loaded
     'data': [
+        'views/mindala_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

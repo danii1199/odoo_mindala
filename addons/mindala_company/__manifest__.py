@@ -22,13 +22,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web', 'website_partner','mindala'],
+    'depends': ['website_partner','mindala'],
 
     # always loaded
     'data': [
-        'views/m4pcompany/m4pcompany_add.xml',
-        'views/m4pcompany/m4pcompany_views.xml',
-
+        'views/m4ocompany_back_views.xml',
+        'views/m4ocompany_add.xml',
+        'views/m4ocompany_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

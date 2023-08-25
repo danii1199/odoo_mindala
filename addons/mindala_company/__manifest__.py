@@ -39,6 +39,8 @@
         'website.assets_wysiwyg': [
         ],
         'website.assets_editor': [
+            'mindala_company/static/src/js/tours/mindala_company.js',
+            'mindala_company/static/src/js/systray_items/*.js',
         ],
         'web.assets_tests': [
         ],

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ====== Single Company Layout ==========================================
+============================================================================ -->
+    <template id="mindala_company.m4ocompany_complete" name="Company" track="1">
+        <t t-call="mindala.mindala_index">
+            <h1 t-field="m4ocompany.name" id="o_wblog_m4ocompany"
+                class="o_editable_no_shadow" data-oe-expression="m4ocompany.name"
+                t-att-data-blog-id="m4ocompany.id" placeholder="Company Title" />
+        </t>
+    </template>
+
+    <!-- ====== List Companies Layout ==========================================
+============================================================================ -->
+    <template id="mindala_company.m4ocompany_list" name="Companies" track="1">
+        <t t-call="mindala.mindala_index">
+            <t t-foreach="m4ocompanies" t-as="company">
+                <a class="badge text-primary border me-1"
+                    t-att-href="company.website_url"
+                    t-esc="company.name" />
+            </t>
+        </t>
+    </template>
+
+</odoo>

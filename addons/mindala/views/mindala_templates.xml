@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ======   Overall pages layout   ===========================================
+============================================================================ -->
+    <template id="mindala_index" name="Mindala Index">
+        <t t-call="website.layout">
+            <t t-out="0" />
+        </t>
+    </template>
+
+</odoo>

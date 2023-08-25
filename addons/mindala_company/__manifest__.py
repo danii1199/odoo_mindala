@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mindala",
+    'name': "Mindala Empresas",
 
-    'icon': 'mindala/static/description/icon.png',
+    'icon': 'mindala_company/static/description/icon.png',
     'icon_image': 'mindala/static/description/icon.png',
     
     'summary': """
@@ -22,12 +22,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['website_partner'],
-
+    'depends': ['website_partner','mindala'],
 
     # always loaded
     'data': [
-        'views/mindala_templates.xml',
+        'views/m4ocompany_back_views.xml',
+        'views/m4ocompany_add.xml',
+        'views/m4ocompany_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -38,6 +39,8 @@
         'website.assets_wysiwyg': [
         ],
         'website.assets_editor': [
+            'mindala_company/static/src/js/tours/mindala_company.js',
+            'mindala_company/static/src/js/systray_items/*.js',
         ],
         'web.assets_tests': [
         ],

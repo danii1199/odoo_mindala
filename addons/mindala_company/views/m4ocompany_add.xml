@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="m4ocompany_view_form_add" model="ir.ui.view">
+        <field name="name">blog.post.view.form.add</field>
+        <field name="model">mindala.m4ocompany</field>
+        <field name="arch" type="xml">
+            <form js_class="website_new_content_form">
+                <group>
+                    <field name="website_url" invisible="1" />
+                    <field name="name" placeholder="Name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="m4ocompany_action_add" model="ir.actions.act_window">
+        <field name="name">New Company</field>
+        <field name="res_model">mindala.m4ocompany</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="m4ocompany_view_form_add" />
+    </record>
+
+</odoo>

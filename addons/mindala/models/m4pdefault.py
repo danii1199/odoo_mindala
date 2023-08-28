@@ -4,7 +4,7 @@ from odoo.addons.website.tools import text_from_html
 from odoo.tools.json import scriptsafe as json_scriptsafe
 from odoo.tools.translate import html_translate
 
-class MindalaDefault(models.Model):
+class MindalaDefault(models.AbstractModel):
     _name = "mindala.default"
     _description = "Mindala Defecto"
     _inherit = ['website.seo.metadata', 'website.published.multi.mixin',

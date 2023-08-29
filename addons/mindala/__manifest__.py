@@ -28,6 +28,8 @@
     # always loaded
     'data': [
         'views/mindala_templates.xml',
+        'views/res_config_settings_views.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

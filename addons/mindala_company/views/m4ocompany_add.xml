@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="m4ocompany_view_form_add" model="ir.ui.view">
-        <field name="name">blog.post.view.form.add</field>
+        <field name="name">mindala.m4ocompany.view.form.add</field>
         <field name="model">mindala.m4ocompany</field>
         <field name="arch" type="xml">
             <form js_class="website_new_content_form">

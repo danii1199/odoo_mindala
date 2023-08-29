@@ -21,7 +21,10 @@ class WebsiteBlog(http.Controller):
         '''/empresas/<model("mindala.m4ocompany"):m4ocompany>''',
     ], type='http', auth="public", website=True, sitemap=True)
     def blog_post(self, m4ocompany):
-        values = {"m4ocompany" : m4ocompany}
+        values = {
+            "m4ocompany" : m4ocompany,
+            'main_object': m4ocompany,
+        }
         response = request.render("mindala_company.m4ocompany_complete", values)
         return response
     

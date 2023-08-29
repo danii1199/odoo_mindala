@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import m4ocompany
+from . import m4pcompany
 

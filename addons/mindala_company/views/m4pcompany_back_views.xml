@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="view_m4ocompany_form" model="ir.ui.view">
-        <field name="name">mindala.m4ocompany.form</field>
-        <field name="model">mindala.m4ocompany</field>
+    <record id="view_m4pcompany_form" model="ir.ui.view">
+        <field name="name">mindala.m4pcompany.form</field>
+        <field name="model">mindala.m4pcompany</field>
         <field name="arch" type="xml">
             <form string="Company">
                 <sheet>
@@ -44,9 +44,9 @@
         </field>
     </record>
 
-    <record id="m4ocompany_view_kanban" model="ir.ui.view">
+    <record id="m4pcompany_view_kanban" model="ir.ui.view">
         <field name="name">company.company.kanban</field>
-        <field name="model">mindala.m4ocompany</field>
+        <field name="model">mindala.m4pcompany</field>
         <field name="arch" type="xml">
             <kanban js_class="website_pages_kanban" class="o_kanban_mobile"
                 action="open_website_url" type="object" sample="1">
@@ -91,9 +91,9 @@
         </field>
     </record>
 
-    <record id="view_m4ocompany_search" model="ir.ui.view">
+    <record id="view_m4pcompany_search" model="ir.ui.view">
         <field name="name">midala.company.search</field>
-        <field name="model">mindala.m4ocompany</field>
+        <field name="model">mindala.m4pcompany</field>
         <field name="arch" type="xml">
             <search string="Company">
                 <filter string="Archived" name="inactive" domain="[('active','=',False)]" />
@@ -110,9 +110,9 @@
         </field>
     </record>
 
-    <record id="view_m4ocompany_list" model="ir.ui.view">
+    <record id="view_m4pcompany_list" model="ir.ui.view">
         <field name="name">Companies Pages Tree</field>
-        <field name="model">mindala.m4ocompany</field>
+        <field name="model">mindala.m4pcompany</field>
         <field name="priority">99</field>
         <field name="arch" type="xml">
             <tree js_class="website_pages_list" type="object" action="open_website_url"
@@ -134,23 +134,23 @@
         </field>
     </record>
 
-    <record id="action_m4ocompany" model="ir.actions.act_window">
+    <record id="action_m4pcompany" model="ir.actions.act_window">
         <field name="name">Companies Pages</field>
-        <field name="res_model">mindala.m4ocompany</field>
+        <field name="res_model">mindala.m4pcompany</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="view_ids"
             eval="[(5, 0, 0),
-        (0, 0, {'view_mode': 'tree', 'view_id': ref('view_m4ocompany_list')}),
-        (0, 0, {'view_mode': 'kanban', 'view_id': ref('m4ocompany_view_kanban')}),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('view_m4pcompany_list')}),
+        (0, 0, {'view_mode': 'kanban', 'view_id': ref('m4pcompany_view_kanban')}),
     ]" />
-        <field name="search_view_id" ref="view_m4ocompany_search" />
-        <field name="context">{'create_action': 'mindala_company.m4ocompany_action_add'}</field>
+        <field name="search_view_id" ref="view_m4pcompany_search" />
+        <field name="context">{'create_action': 'mindala_company.m4pcompany_action_add'}</field>
     </record>
 
-    <menuitem id="menu_m4ocompany_pages"
+    <menuitem id="menu_m4pcompany_pages"
         parent="website.menu_content"
         sequence="20"
         name="Empresas"
-        action="action_m4ocompany" />
+        action="action_m4pcompany" />
 
 </odoo>

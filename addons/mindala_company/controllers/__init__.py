@@ -18,19 +18,19 @@ from odoo.tools import sql
 
 class WebsiteBlog(http.Controller):
     @http.route([
-        '''/empresas/<model("mindala.m4ocompany"):m4ocompany>''',
+        '''/empresas/<model("mindala.m4pcompany"):m4pcompany>''',
     ], type='http', auth="public", website=True, sitemap=True)
-    def blog_post(self, m4ocompany):
+    def blog_post(self, m4pcompany):
         values = {
-            "m4ocompany" : m4ocompany,
-            'main_object': m4ocompany,
+            "m4pcompany" : m4pcompany,
+            'main_object': m4pcompany,
         }
-        response = request.render("mindala_company.m4ocompany_complete", values)
+        response = request.render("mindala_company.m4pcompany_complete", values)
         return response
     
     @http.route(['''/empresas'''], type='http', auth="public", website=True, sitemap=True)
     def get_companies(self, limit='15'):
         values = { }
-        values['m4ocompanies'] = request.env['mindala.m4ocompany'].search([])
-        response = request.render("mindala_company.m4ocompany_list", values)
+        values['m4pcompanies'] = request.env['mindala.m4pcompany'].search([])
+        response = request.render("mindala_company.m4pcompany_list", values)
         return response

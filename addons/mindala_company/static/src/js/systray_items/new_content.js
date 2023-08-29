@@ -25,8 +25,8 @@ patch(NewContentModal.prototype, 'mindala_m4pnews_new_content', {
       (element) => element.moduleXmlId === 'base.module_mindala_company'
     );
     newBlogElement.createNewContent = () =>
-      this.onAddContent('mindala_company.m4ocompany_action_add', true);
+      this.onAddContent('mindala_company.m4pcompany_action_add', true);
     newBlogElement.status = MODULE_STATUS.INSTALLED;
-    newBlogElement.model = 'mindala.m4ocompany';
+    newBlogElement.model = 'mindala.m4pcompany';
   },
 });

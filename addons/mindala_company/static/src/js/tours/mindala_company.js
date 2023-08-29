@@ -5,7 +5,7 @@ odoo.define("mindala_company.tour", function (require) {
     const {Markup} = require('web.utils');
     const wTourUtils = require('website.tour_utils');
 
-    wTourUtils.registerWebsitePreviewTour("m4ocompany", {
+    wTourUtils.registerWebsitePreviewTour("m4pcompany", {
         url: "/",
     }, [{
         trigger: "body:not(:has(#o_new_content_menu_choices)) .o_new_content_container > a",

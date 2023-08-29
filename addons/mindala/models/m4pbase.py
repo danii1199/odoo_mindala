@@ -4,8 +4,8 @@ from odoo.addons.website.tools import text_from_html
 from odoo.tools.json import scriptsafe as json_scriptsafe
 from odoo.tools.translate import html_translate
 
-class MindalaDefault(models.AbstractModel):
-    _name = "mindala.default"
+class MindalaBase(models.AbstractModel):
+    _name = "mindala.base"
     _description = "Mindala Defecto"
     _inherit = ['website.seo.metadata', 'website.published.multi.mixin',
         'website.cover_properties.mixin', 'website.searchable.mixin']
@@ -60,6 +60,6 @@ class MindalaDefault(models.AbstractModel):
             if (published_in_vals and 'published_date' not in vals and
                     (not post.published_date or post.published_date <= fields.Datetime.now())):
                 copy_vals['published_date'] = vals[list(published_in_vals)[0]] and fields.Datetime.now() or False
-            result &= super(MindalaDefault, post).write(copy_vals)
+            result &= super(MindalaBase, post).write(copy_vals)
         self._check_for_publication(vals)
         return result

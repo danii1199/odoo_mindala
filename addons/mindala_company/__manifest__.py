@@ -26,9 +26,9 @@
 
     # always loaded
     'data': [
-        'views/m4ocompany_back_views.xml',
-        'views/m4ocompany_add.xml',
-        'views/m4ocompany_templates.xml',
+        'views/m4pcompany_back_views.xml',
+        'views/m4pcompany_add.xml',
+        'views/m4pcompany_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

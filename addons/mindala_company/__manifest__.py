@@ -26,6 +26,7 @@
 
     # always loaded
     'data': [
+        'security/ir.model.access.csv',
         'views/m4pcompany_back_views.xml',
         'views/m4pcompany_add.xml',
         'views/m4pcompany_templates.xml',

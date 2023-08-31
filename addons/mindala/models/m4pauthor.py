@@ -6,3 +6,9 @@ class ModelName(models.Model):
     _description = "Autores Mindala"
 
     name = fields.Char(string="nombre")
+    partner = fields.One2many(
+        comodel_name="res.partner",
+        inverse_name="id",
+        string="Contactos",
+        required=False,
+    )

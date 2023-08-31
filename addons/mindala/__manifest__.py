@@ -19,6 +19,7 @@
     "depends": ["website_partner"],
     # always loaded
     "data": [
+        "security/ir.model.access.csv",
         "views/mindala_templates.xml",
         "views/res_config_settings_views.xml",
         "views/m4pauthor/background_view.xml",

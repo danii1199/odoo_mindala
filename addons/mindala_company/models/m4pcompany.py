@@ -5,12 +5,11 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+
 class MindalaCompany(models.Model):
     _name = "mindala.m4pcompany"
     _description = "Mindala empresas"
     _inherit = "mindala.base"
-
-    
 
     def _compute_website_url(self):
         super(MindalaCompany, self)._compute_website_url()

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="m4pauthor_rel_tree_from_model" model="ir.ui.view">
+            <field name="name">m4pauthor.rel.tree.from.modal</field>
+            <field name="model">mindala.m4pauthor_rel</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <tree string="Authors" editable="bottom">
+                    <field name="type"/>
+                    <field name="author_id"/>
+                    <field name="name"/>
+                    <field name="url"/>
+                    <field name="email"/>
+                    <field name="font"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="m4pauthor_rel_view_form_from_model" model="ir.ui.view">
+            <field name="name">m4pauthor.rel.view.form.from.model</field>
+            <field name="model">mindala.m4pauthor_rel</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <form string="Autor">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type"/>
+                                <field name="author_id"/>
+                                <field name="name"/>
+                                <field name="url"/>
+                                <field name="email"/>
+                                <field name="font"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

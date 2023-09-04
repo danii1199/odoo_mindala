@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "Mindala Empresas",
-    "icon": "mindala_company/static/description/icon.png",
+    "name": "Mindala Noticias",
+    "icon": "mindala_news/static/description/icon.png",
     "icon_image": "mindala/static/description/icon.png",
     "summary": """
        Mindala Framework""",
@@ -20,9 +20,9 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "views/m4pcompany_back_views.xml",
-        "views/m4pcompany_add.xml",
-        "views/m4pcompany_templates.xml",
+        "views/m4pnews_back_views.xml",
+        "views/m4pnews_add.xml",
+        "views/m4pnews_templates.xml",
     ],
     # only loaded in demonstration mode
     "demo": [
@@ -31,8 +31,8 @@
     "assets": {
         "website.assets_wysiwyg": [],
         "website.assets_editor": [
-            "mindala_company/static/src/js/tours/mindala_company.js",
-            "mindala_company/static/src/js/systray_items/*.js",
+            "mindala_news/static/src/js/tours/mindala_news.js",
+            "mindala_news/static/src/js/systray_items/*.js",
         ],
         "web.assets_tests": [],
         "web.assets_frontend": [],

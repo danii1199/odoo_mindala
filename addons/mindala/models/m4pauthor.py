@@ -43,23 +43,27 @@ class M4PAuthorRel(models.Model):
     font = fields.Char(string="Fuente", required=False)
 
 
-class M4PAuthorAbs(models.AbstractModel):
-    _name = "mindala.m4pauthor_abs"
+# class M4PAuthorAbs(models.AbstractModel):
+#     _name = "mindala.m4pauthor_abs"
+#
+#     def _get_name(self):
+#         _logger.critical(self._name)
+#         return "mindala.m4pcompany"
+#
+#     rel_id = fields.One2many(
+#         comodel_name="mindala.m4pauthor_rel",
+#         inverse_name="source_id",
+#         string="Relacion",
+#         domain=[("source_model_id", "=", lambda self: self._get_name())],
+#     )
 
-    rel_id = fields.One2many(
-        comodel_name="mindala.m4pauthor_rel",
-        inverse_name="source_id",
-        string="Relacion",
-        required=False,
-    )
-
-    # def write(self, vals):
-    #     result = True
-    #     _logger.critical(vals)
-    #     for fields in vals:
-    #         if fields == "rel_id":
-    #             for fields_rel in vals[fields]:
-    #                 fields_rel[2]["source_model_id"] = self._name
-    #                 fields_rel[2]["source_id"] = self.id
-    #     result &= super(M4PAuthorAbs, self).write(vals)
-    #     return result
+# def write(self, vals):
+#     result = True
+#     _logger.critical(vals)
+#     for fields in vals:
+#         if fields == "rel_id":
+#             for fields_rel in vals[fields]:
+#                 fields_rel[2]["source_model_id"] = self._name
+#                 fields_rel[2]["source_id"] = self.id
+#     result &= super(M4PAuthorAbs, self).write(vals)
+#     return result

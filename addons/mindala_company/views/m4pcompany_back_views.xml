@@ -4,6 +4,7 @@
     <record id="view_m4pcompany_form" model="ir.ui.view">
         <field name="name">mindala.m4pcompany.form</field>
         <field name="model">mindala.m4pcompany</field>
+        <!--        <field name="domain">[('source_model_id', '=', 'mindala.m4pcompany')]</field>-->
         <field name="arch" type="xml">
             <form string="Company">
                 <sheet>
@@ -39,7 +40,7 @@
                             </group>
                         </page>
                         <page string="Autores" name="authors">
-                            <field name="rel_id" widget="one2many_list"/>
+                            <field name="rel_id" widget="one2many"/>
                         </page>
                     </notebook>
                 </sheet>

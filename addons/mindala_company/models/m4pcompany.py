@@ -12,7 +12,7 @@ class MindalaCompany(models.Model):
         comodel_name="mindala.m4pauthor_rel",
         inverse_name="source_id",
         string="Relacion",
-        domain=[("source_model_id", "=", _name,
+        domain=[("source_model_id", "=", _name)],
     )
 
     def _compute_website_url(self):

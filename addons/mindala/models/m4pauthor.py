@@ -9,11 +9,11 @@ class M4PAuthor(models.Model):
     _name = "mindala.m4pauthor"
     _description = "Autores Mindala"
 
-    name = fields.Char(string="Nombre")
+    name = fields.Char(string="Name")
     partner_id = fields.Many2one(
         comodel_name="res.partner",
         inverse_name="id",
-        string="Contacto",
+        string="Contact",
         required=False,
     )
 
@@ -21,49 +21,24 @@ class M4PAuthor(models.Model):
 class M4PAuthorRel(models.Model):
     _name = "mindala.m4pauthor_rel"
 
-    source_model_id = fields.Char(string="Modelo", required=False)
-    source_id = fields.Integer(string="ID orígen", required=False)
+    source_model_id = fields.Char(string="Model")
+    source_id = fields.Integer(string="Source ID")
     type = fields.Selection(
-        string="Tipo",
+        string="Type",
         selection=[
-            ("0", "Autor"),
-            ("1", "Enlace"),
+            ("0", "Author"),
+            ("1", "Link"),
         ],
-        required=False,
+        default="0",
+        required=True,
     )
     author_id = fields.Many2one(
         comodel_name="mindala.m4pauthor",
         inverse_name="id",
-        string="Autor",
+        string="Author",
         required=False,
     )
-    name = fields.Char(string="Nombre", required=False)
+    name = fields.Char(string="Name", required=False)
     url = fields.Char(string="Url", required=False)
-    email = fields.Char(string="Correo", required=False)
-    font = fields.Char(string="Fuente", required=False)
-
-
-# class M4PAuthorAbs(models.AbstractModel):
-#     _name = "mindala.m4pauthor_abs"
-#
-#     def _get_name(self):
-#         _logger.critical(self._name)
-#         return "mindala.m4pcompany"
-#
-#     rel_id = fields.One2many(
-#         comodel_name="mindala.m4pauthor_rel",
-#         inverse_name="source_id",
-#         string="Relacion",
-#         domain=[("source_model_id", "=", lambda self: self._get_name())],
-#     )
-
-# def write(self, vals):
-#     result = True
-#     _logger.critical(vals)
-#     for fields in vals:
-#         if fields == "rel_id":
-#             for fields_rel in vals[fields]:
-#                 fields_rel[2]["source_model_id"] = self._name
-#                 fields_rel[2]["source_id"] = self.id
-#     result &= super(M4PAuthorAbs, self).write(vals)
-#     return result
+    email = fields.Char(string="Email", required=False)
+    font = fields.Char(string="Font", required=False)

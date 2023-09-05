@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="mindala_author_form_view" model="ir.ui.view">
-            <field name="name">mindala.news.form.view</field>
+        <record id="m4pauthor_rel_tree_from_model" model="ir.ui.view">
+            <field name="name">m4pauthor.rel.tree.from.modal</field>
             <field name="model">mindala.m4pauthor_rel</field>
+            <field name="priority" eval="20"/>
             <field name="arch" type="xml">
-                <form string="Create relation">
-                    <sheet>
-                        <group name="group_top">
-                            <field name="source_model_id" invisible="1"/>
-                            <field name="type"/>
-                        </group>
-                        <group name="group_bottom">
-                            <field name="author_id" attrs=" {'invisible': [ ('type','=','1' ) ]} "/>
-                            <field name="name" attrs=" {'invisible': [ ('type','=','0' ) ]} "/>
-                            <field name="url" attrs="{'invisible':[('type', '==', '0')]}"/>
-                            <field name="email" attrs="{'invisible':[('type', '==', '0')]}"/>
-                            <field name="font"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <record id="mindala_author_rel_list_view" model="ir.ui.view">
-            <field name="name">mindala.m4pauthor_rel.list</field>
-            <field name="model">mindala.m4pauthor_rel</field>
-            <field name="arch" type="xml">
-                <tree string="Authors">
+                <tree string="Authors" editable="bottom">
                     <field name="type"/>
                     <field name="author_id"/>
                     <field name="name"/>
@@ -38,15 +17,26 @@
             </field>
         </record>
 
-        <record id="mindala_author_action" model="ir.actions.act_window">
-            <field name="name">News</field>
-            <field name="res_model">mindala.m4pauthor_rel</field>
-            <field name="view_mode">form,tree</field>
-            <field name="view_ids"
-                   eval="[(5, 0, 0),
-                    (0, 0, {'view_mode': 'form', 'view_id': ref('mindala_author_form_view')}),
-                    (0, 0, {'view_mode': 'tree', 'view_id': ref('mindala_author_rel_list_view')}),
-            ]"/>
+        <record id="m4pauthor_rel_view_form_from_model" model="ir.ui.view">
+            <field name="name">m4pauthor.rel.view.form.from.model</field>
+            <field name="model">mindala.m4pauthor_rel</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <form string="Autor">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type"/>
+                                <field name="author_id"/>
+                                <field name="name"/>
+                                <field name="url"/>
+                                <field name="email"/>
+                                <field name="font"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
         </record>
     </data>
 </odoo>

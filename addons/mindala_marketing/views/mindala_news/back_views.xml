@@ -28,7 +28,11 @@
                     <notebook>
                         <page string="Authors" name="authors">
                             <field name="authors" widget="one2many_list"
-                                   context="{'default_source_model_id':'mindala.news'}"/>
+                                   context="{'default_source_model_name':'mindala.news'}"/>
+                        </page>
+                        <page string="Videos" name="videos">
+                            <field name="videos" widget="one2many_list"
+                                   context="{'default_source_model_name':'mindala.news'}"/>
                         </page>
                     </notebook>
                 </sheet>

@@ -26,5 +26,5 @@ class MindalaNews(http.Controller):
     def get_news(self):
         values = {}
         values["mindala_news"] = request.env["mindala.news"].search([])
-        response = request.render("mindala-marketing.mindala_news_list", values)
+        response = request.render("mindala_marketing.mindala_news_list", values)
         return response

@@ -22,8 +22,8 @@
         "security/ir.model.access.csv",
         "views/mindala_templates.xml",
         "views/res_config_settings_views.xml",
-        "views/m4pauthor/background_view.xml",
-        "views/m4pauthor/relation_view.xml",
+        "views/mindala_author/background_view.xml",
+        "views/mindala_author/relation_view.xml",
     ],
     # only loaded in demonstration mode
     "demo": [

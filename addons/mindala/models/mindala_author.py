@@ -5,8 +5,8 @@ from odoo import fields, models
 _logger = logging.getLogger(__name__)
 
 
-class M4PAuthor(models.Model):
-    _name = "mindala.m4pauthor"
+class MindalaAuthor(models.Model):
+    _name = "mindala.author"
     _description = "Autores Mindala"
 
     name = fields.Char(string="Name")
@@ -19,9 +19,9 @@ class M4PAuthor(models.Model):
 
 
 class M4PAuthorRel(models.Model):
-    _name = "mindala.m4pauthor_rel"
+    _name = "mindala.author_rel"
 
-    source_model_id = fields.Char(string="Model")
+    source_model_name = fields.Char(string="Model")
     source_id = fields.Integer(string="Source ID")
     type = fields.Selection(
         string="Type",
@@ -33,7 +33,7 @@ class M4PAuthorRel(models.Model):
         required=True,
     )
     author_id = fields.Many2one(
-        comodel_name="mindala.m4pauthor",
+        comodel_name="mindala.author",
         inverse_name="id",
         string="Author",
         required=False,

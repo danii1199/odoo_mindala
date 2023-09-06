@@ -23,6 +23,7 @@
         "views/mindala_news/back_views.xml",
         "views/mindala_news/form_add.xml",
         "views/mindala_news/front_views.xml",
+        "views/mindala_news/config_settings_view.xml",
     ],
     # only loaded in demonstration mode
     "demo": [

@@ -11,15 +11,11 @@
                 <xpath expr="//div[hasclass('settings')]" position="inside">
                     <div class="app_settings_block" data-string="Mindala" string="Mindala"
                          data-key="mindala">
-                        <h2>Mindala Configuration</h2>
-                        <div class="row mt16 o_settings_container">
-                            <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane"/>
-                                <div class="o_setting_right_pane">
-                                    <label for="use_authors" string="Authors"/>
-                                    <div class="text-muted">Activar Autores</div>
-                                    <field name="use_authors"/>
-                                </div>
+                        <div class="mindala_settings">
+                            <div class="row mt16 o_settings_container" id="website_slides_selection_settings">
+                                <group>
+                                    <h2>Mindala Configuration</h2>
+                                </group>
                             </div>
                         </div>
                     </div>

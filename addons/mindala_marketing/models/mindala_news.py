@@ -13,10 +13,17 @@ class MindalaNews(models.Model):
     _inherit = ["mindala.base"]
 
     authors = fields.One2many(
-        comodel_name="mindala.m4pauthor_rel",
+        comodel_name="mindala.author_rel",
         inverse_name="source_id",
-        string="Relacion",
-        domain=[("source_model_id", "=", _name)],
+        string="Authors",
+        domain=[("source_model_name", "=", _name)],
+    )
+
+    videos = fields.One2many(
+        comodel_name="mindala.video_rel",
+        inverse_name="source_id",
+        string="Videos",
+        domain=[("source_model_name", "=", _name)],
     )
 
     def _compute_website_url(self):

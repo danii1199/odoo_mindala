@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="mindala_author_form_view" model="ir.ui.view">
-            <field name="name">mindala.news.form.view</field>
-            <field name="model">mindala.m4pauthor_rel</field>
+        <record id="mindala_author_rel_form_view" model="ir.ui.view">
+            <field name="name">mindala.author_rel.form.view</field>
+            <field name="model">mindala.author_rel</field>
             <field name="arch" type="xml">
                 <form string="Create relation">
                     <sheet>
                         <group name="group_top">
-                            <field name="source_model_id" invisible="1"/>
+                            <field name="source_model_name" invisible="1"/>
                             <field name="type"/>
                         </group>
                         <group name="group_bottom">
@@ -24,8 +24,8 @@
         </record>
 
         <record id="mindala_author_rel_list_view" model="ir.ui.view">
-            <field name="name">mindala.m4pauthor_rel.list</field>
-            <field name="model">mindala.m4pauthor_rel</field>
+            <field name="name">mindala.author_rel.list.view</field>
+            <field name="model">mindala.author_rel</field>
             <field name="arch" type="xml">
                 <tree string="Authors">
                     <field name="type"/>
@@ -38,13 +38,13 @@
             </field>
         </record>
 
-        <record id="mindala_author_action" model="ir.actions.act_window">
+        <record id="mindala_author_rel_action" model="ir.actions.act_window">
             <field name="name">News</field>
-            <field name="res_model">mindala.m4pauthor_rel</field>
+            <field name="res_model">mindala.author_rel</field>
             <field name="view_mode">form,tree</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
-                    (0, 0, {'view_mode': 'form', 'view_id': ref('mindala_author_form_view')}),
+                    (0, 0, {'view_mode': 'form', 'view_id': ref('mindala_author_rel_form_view')}),
                     (0, 0, {'view_mode': 'tree', 'view_id': ref('mindala_author_rel_list_view')}),
             ]"/>
         </record>

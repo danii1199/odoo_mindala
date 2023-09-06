@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <odoo>
     <!-- Blog views -->
-    <record id="view_m4pauthor_list" model="ir.ui.view">
-        <field name="name">mindala.m4pauthor.list</field>
-        <field name="model">mindala.m4pauthor</field>
+    <record id="mindala_author_list_view" model="ir.ui.view">
+        <field name="name">mindala.author.list.view</field>
+        <field name="model">mindala.author</field>
         <field name="arch" type="xml">
             <tree string="Autores">
                 <field name="name"/>
@@ -11,9 +11,9 @@
             </tree>
         </field>
     </record>
-    <record id="view_m4pauthor_form" model="ir.ui.view">
-        <field name="name">mindala.m4pauthor.form</field>
-        <field name="model">mindala.m4pauthor</field>
+    <record id="mindala_author_form_view" model="ir.ui.view">
+        <field name="name">mindala.author.form.view</field>
+        <field name="model">mindala.author</field>
         <field name="arch" type="xml">
             <form string="Autor">
                 <sheet>
@@ -26,18 +26,18 @@
         </field>
     </record>
 
-    <record id="action_m4pauthor" model="ir.actions.act_window">
+    <record id="mindala_author_action" model="ir.actions.act_window">
         <field name="name">Autores</field>
-        <field name="res_model">mindala.m4pauthor</field>
+        <field name="res_model">mindala.author</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Autores"
+    <menuitem name="Authors"
               id="menu_author_root_global"
               sequence="100"
               parent="website.menu_website_global_configuration"
               groups="website.group_website_designer"/>
 
-    <menuitem id="menu_author_global" parent="menu_author_root_global" name="Autor" action="action_m4pauthor"
+    <menuitem id="menu_author_global" parent="menu_author_root_global" name="Author" action="mindala_author_action"
               sequence="20"/>
 </odoo>

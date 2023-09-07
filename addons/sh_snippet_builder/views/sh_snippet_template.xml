@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Snippet Template -->
+    <template id="sh_snippet_builder_std_tmpl_1" name="Snippet Builder">
+        <section class="sh_snippet_builder_section_1">
+
+            <div class="">
+
+            </div>
+
+            HTML CODE GOES HERE
+        </section>
+    </template>
+
+    <!-- Snippet Options-->
+    <template id="sh_snippet_builder_snippet_options" name="Snippet Builder Options"
+              inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-js="js_editor_sh_snippet_builder"
+                 data-selector=".sh_snippet_builder_section_1">
+                <we-row string="Padding">
+                    <we-input t-att-data-apply-to="apply_to" data-css-property="padding" data-unit="px"
+                              data-select-style="0"/>
+                </we-row>
+                <we-row>
+                    <we-select string="Width">
+                        <we-button data-select-class="w-25">25%</we-button>
+                        <we-button data-select-class="w-50">50%</we-button>
+                        <we-button data-select-class="w-75">75%</we-button>
+                        <we-button data-select-class="w-100" data-name="so_width_100">100%
+                        </we-button>
+                    </we-select>
+                </we-row>
+                <we-row>
+                    <we-select string="Custom Options">
+                        <we-button data-select-class="d-none">None</we-button>
+                        <we-button data-select-class="custom">custom</we-button>
+                    </we-select>
+                </we-row>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

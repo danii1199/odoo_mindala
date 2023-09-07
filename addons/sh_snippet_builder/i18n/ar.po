@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_snippet_builder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 13:21+0000\n"
+"PO-Revision-Date: 2021-01-29 13:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__css
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_form_view
+#, python-format
+msgid "CSS"
+msgstr "CSS."
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "CSS Code"
+msgstr "CSS Code."
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "Close"
+msgstr "قريب"
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_ir_ui_view__display_name
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: sh_snippet_builder
+#: code:addons/sh_snippet_builder/models/snippet_builder.py:0
+#, python-format
+msgid ""
+"Error while validating view:\n"
+"\n"
+"%(error)s"
+msgstr ""
+"خطأ أثناء التحقق من صحة العرض:\n"
+"\n"
+"%(error)s"
+
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__html
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_form_view
+#, python-format
+msgid "HTML"
+msgstr "لغة البرمجة"
+
+#. module: sh_snippet_builder
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_std_tmpl_1
+msgid "HTML CODE GOES HERE"
+msgstr "رمز HTML يذهب هنا"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "HTML Code"
+msgstr "رمز HTML"
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_ir_ui_view__id
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: sh_snippet_builder
+#: code:addons/sh_snippet_builder/models/snippet_builder.py:0
+#, python-format
+msgid "Invalid view %(name)s definition in %(file)s"
+msgstr "تعريف غير صالح٪ (الاسم) التعريف S في٪ (ملف)"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__js
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_form_view
+#, python-format
+msgid "JS"
+msgstr "جي إس"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "JS Code"
+msgstr "JS Code."
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_ir_ui_view____last_update
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: sh_snippet_builder
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث على"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "Make Snippet"
+msgstr "جعل القصاص"
+
+#. module: sh_snippet_builder
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_snippet_options
+msgid "Modify"
+msgstr "تعديل"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__name
+#, python-format
+msgid "Name"
+msgstr "اسم"
+
+#. module: sh_snippet_builder
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_ud_tmpl_2
+msgid "Sample Calculator"
+msgstr "حاسبة عينة"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "Snippet Blog Carouse"
+msgstr "مقتطف بلوق comming."
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#: model:ir.actions.act_window,name:sh_snippet_builder.sh_snippet_builder_action
+#: model:ir.model,name:sh_snippet_builder.model_sh_snippet_builder
+#: model:ir.ui.menu,name:sh_snippet_builder.sh_snippet_builder_menu
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_snippets
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_tree_view
+#, python-format
+msgid "Snippet Builder"
+msgstr "منشئ المقتطف"
+
+#. module: sh_snippet_builder
+#: model_terms:ir.ui.view,arch_db:sh_snippet_builder.sh_snippet_builder_form_view
+msgid "Snippet Builder Form"
+msgstr "شكل منشئ القصاص"
+
+#. module: sh_snippet_builder
+#: model:ir.model,name:sh_snippet_builder.model_ir_ui_view
+#: model:ir.model.fields,field_description:sh_snippet_builder.field_sh_snippet_builder__view_id
+msgid "View"
+msgstr "رأي"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "Your CSS Code"
+msgstr "رمز CSS الخاص بك"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "Your HTML Code"
+msgstr "رمز HTML الخاص بك"
+
+#. module: sh_snippet_builder
+#. openerp-web
+#: code:addons/sh_snippet_builder/static/src/xml/snippet_builder_popup.xml:0
+#, python-format
+msgid "Your JS Code"
+msgstr "رمز JS الخاص بك"

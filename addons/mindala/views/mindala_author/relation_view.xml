@@ -48,5 +48,14 @@
                     (0, 0, {'view_mode': 'tree', 'view_id': ref('mindala_author_rel_list_view')}),
             ]"/>
         </record>
+
+        <template id="mindala.template_personalizada" name="Plantilla Personalizada">
+            <t>
+                <div class="custom-template">
+                    <!-- Contenido personalizado de la plantilla -->
+                    <p>Este es el contenido de la plantilla personalizada.</p>
+                </div>
+            </t>
+        </template>
     </data>
 </odoo>

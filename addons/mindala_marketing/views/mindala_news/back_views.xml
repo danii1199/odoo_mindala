@@ -26,7 +26,7 @@
                         <field name="write_date"/>
                     </group>
                     <notebook>
-                        <page string="Authors" name="authors">
+                        <page string="authors" name="authors" attrs="{'invisible': [('tab', '=', False)]}">
                             <field name="authors" widget="one2many_list"
                                    context="{'default_source_model_name':'mindala.news'}"/>
                         </page>
@@ -39,6 +39,7 @@
             </form>
         </field>
     </record>
+
 
     <record id="mindala_news_kanban_view" model="ir.ui.view">
         <field name="name">mindala.news.kanban.view</field>

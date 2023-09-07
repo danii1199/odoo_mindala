@@ -25,6 +25,16 @@ class MindalaNews(models.Model):
         string="Videos",
         domain=[("source_model_name", "=", _name)],
     )
+    tab = fields.Boolean(string="Tab", compute="_mostrate_tab", store=False)
+
+    def _mostrate_tab(self):
+        _logger.critical("ESTOY ENTRANDO")
+        parameter_name = "mindala_news_authors"
+        config_parameter = (
+            self.env["ir.config_parameter"].sudo().get_param(parameter_name)
+        )
+        self.tab = config_parameter
+        _logger.critical(config_parameter)
 
     def _compute_website_url(self):
         super(MindalaNews, self)._compute_website_url()

@@ -8,6 +8,7 @@
     "description": """
         Aplicación de Mindala con multiples tipos de datos
     """,
+    "installable": False,
     "author": "dmanzano",
     "website": "https://www.mindalatech.com",
     # Categories can be used to filter modules in modules listing

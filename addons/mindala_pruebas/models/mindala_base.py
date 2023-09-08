@@ -1,5 +1,9 @@
+import logging
+
 from odoo import api, models, fields, _
 from odoo.tools.translate import html_translate
+
+_logger = logging.getLogger(__name__)
 
 
 class MindalaBase(models.AbstractModel):
@@ -7,7 +11,6 @@ class MindalaBase(models.AbstractModel):
     _description = "Mindala Defecto"
     _inherit = [
         "website.seo.metadata",
-        "website.published.multi.mixin",
         "website.cover_properties.mixin",
         "website.searchable.mixin",
     ]

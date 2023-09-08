@@ -26,7 +26,7 @@
                         <field name="write_date"/>
                     </group>
                     <notebook>
-                        <page string="authors" name="authors" attrs="{'invisible': [('tab', '=', False)]}">
+                        <page string="authors" name="authors">
                             <field name="authors" widget="one2many_list"
                                    context="{'default_source_model_name':'mindala.news'}"/>
                         </page>

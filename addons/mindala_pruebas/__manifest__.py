@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "Mindala",
+    "name": "Mindala pruebas",
     "icon": "mindala/static/description/icon.png",
     "icon_image": "mindala/static/description/icon.png",
     "summary": """
@@ -10,6 +10,7 @@
     """,
     "author": "dmanzano",
     "website": "https://www.mindalatech.com",
+    "installable": False,
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list

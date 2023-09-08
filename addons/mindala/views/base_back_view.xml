@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mindala_form_view" model="ir.ui.view">
+            <field name="name">mindala.form.view</field>
+            <field name="model">mindala.base</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"
+                             attrs="{'invisible': [('active', '=', False)]}">
+                            <field name="is_published" widget="website_redirect_button"/>
+                        </div>
+                        <notebook>
+                            <page string="Content" name="content">
+                                <field name="active" invisible="1"/>
+                                <field name="name" placeholder="New Title"/>
+                                <field name="website_id" groups="website.group_multi_website"/>
+                            </page>
+                            <page string="details" name="details">
+                                <field name="author_id"/>
+                                <field name="create_date" groups="base.group_no_one"/>
+                                <field name="post_date"/>
+                                <field name="write_uid"/>
+                                <field name="write_date"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

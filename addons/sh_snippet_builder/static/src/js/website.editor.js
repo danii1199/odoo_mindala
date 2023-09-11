@@ -9,24 +9,6 @@ odoo.define('sh_snippet_builder.editor_js', function (require) {
     var _t = core._t;
     const QWeb = core.qweb;
 
-odoo.define(dynamic_snippet_blog.dynamic, function (require) {
-   var PublicWidget = require('web.public.widget');
-   var rpc = require('web.rpc');
-   var Dynamic = PublicWidget.Widget.extend({
-       selector: '.dynamic_snippet_blog',
-       start: function () {
-           var self = this;
-           rpc.query({
-               route: '/total_product_sold',
-               params: {},
-           }).then(function (result) {
-               self.$('#total_sold').text(result);
-           });
-       },
-   });
-   PublicWidget.registry.dynamic_snippet_blog = Dynamic;
-   return Dynamic;
-});
 
     // SNIPPET OPTION.
     options.registry.js_editor_sh_snippet_builder = options.Class.extend({

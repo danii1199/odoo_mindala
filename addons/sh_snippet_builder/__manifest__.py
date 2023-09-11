@@ -20,8 +20,8 @@ Snippet Builder Odoo
         "security/ir.model.access.csv",
         "views/sh_snippet_builder_views.xml",
         "views/sh_snippet_template.xml",
+        "views/custom_snippet.xml",
         "data/sh_snippet_data.xml",
-        "views/snippet.xml",
     ],
     "assets": {
         "website.assets_wysiwyg": [

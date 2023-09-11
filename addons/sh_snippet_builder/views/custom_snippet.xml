@@ -1,0 +1,43 @@
+<odoo>
+    <!-- Template del snippet con código html -->
+    <template id="basic_snippet" name="Basic Snippet">
+        <section class="basic_snippet">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Basic Snippet</h1>
+                    <p>This is a basic snippet that is used to test the basic functionality of the snippets.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+    <!--Inherit para mostrar el snippet en "Estructura" -->
+    <template id="external_snippets" inherit_id="website.snippets" priority="8">
+        <xpath expr="//div[@id='snippet_structure']//t[@t-snippet][last()]" position="after">
+            <t t-snippet="sh_snippet_builder.basic_snippet"/>
+        </xpath>
+    </template>
+    <!-- Snippet options -->
+    <template id="custom_snippet_options" inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-selector=".basic_snippet">
+                <we-row string="Padding">
+                    <we-input t-att-data-apply-to="apply_to" data-css-property="padding" data-unit="px"
+                              data-select-style="0"/>
+                </we-row>
+                <we-select string="Width">
+                    <we-button data-select-class="w-25">25%</we-button>
+                    <we-button data-select-class="w-50">50%</we-button>
+                    <we-button data-select-class="w-75">75%</we-button>
+                    <we-button data-select-class="w-100" data-name="so_width_100">100%
+                    </we-button>
+                </we-select>
+                <we-select string="Custom Options">
+                    <we-button data-select-class="new">new</we-button>
+                    <we-button data-select-class="d-none">None</we-button>
+                    <we-button data-select-class="custom">custom</we-button>
+                </we-select>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

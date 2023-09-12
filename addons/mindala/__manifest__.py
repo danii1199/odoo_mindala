@@ -21,6 +21,7 @@
     "data": [
         "views/base_back_view.xml",
         "views/base_config_settings_views.xml",
+        "views/mindala_author/mindala_author_back_view.xml",
     ],
     # only loaded in demonstration mode
     "demo": [

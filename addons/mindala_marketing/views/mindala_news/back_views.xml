@@ -10,7 +10,7 @@
                     <xpath expr="//notebook" position="inside">
                         <field name="author_tab" invisible="1"/>
                         <page name="authors" string="Authors" attrs="{'invisible': [('author_tab', '=', False)]}">
-                            <field name="authors"/>
+                            <field name="authors" context="{'default_source_model_name': 'mindala.news'}"/>
                         </page>
                     </xpath>
                 </data>

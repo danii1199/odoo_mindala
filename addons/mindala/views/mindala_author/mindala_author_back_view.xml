@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mindala_author_rel_form_view" model="ir.ui.view">
+            <field name="name">mindala.author_rel.form.view</field>
+            <field name="model">mindala.author_rel</field>
+            <field name="arch" type="xml">
+                <form string="Create relation">
+                    <sheet>
+                        <group name="group_top">
+                            <field name="source_model_name" invisible="1"/>
+                            <field name="type"/>
+                        </group>
+                        <group name="group_bottom">
+                            <field name="author_id" attrs=" {'invisible': [ ('type','=','1' ) ]} "/>
+                            <field name="name" attrs=" {'invisible': [ ('type','=','0' ) ]} "/>
+                            <field name="url" attrs="{'invisible':[('type', '==', '0')]}"/>
+                            <field name="email" attrs="{'invisible':[('type', '==', '0')]}"/>
+                            <field name="font"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mindala_author_rel_list_view" model="ir.ui.view">
+            <field name="name">mindala.author_rel.list.view</field>
+            <field name="model">mindala.author_rel</field>
+            <field name="arch" type="xml">
+                <tree string="Authors">
+                    <field name="type"/>
+                    <field name="author_id"/>
+                    <field name="name"/>
+                    <field name="url"/>
+                    <field name="email"/>
+                    <field name="font"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mindala_author_rel_action" model="ir.actions.act_window">
+            <field name="name">News</field>
+            <field name="res_model">mindala.author_rel</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                    (0, 0, {'view_mode': 'form', 'view_id': ref('mindala_author_rel_form_view')}),
+                    (0, 0, {'view_mode': 'tree', 'view_id': ref('mindala_author_rel_list_view')}),
+            ]"/>
+        </record>
+
+        <template id="mindala.template_personalizada" name="Plantilla Personalizada">
+            <t>
+                <div class="custom-template">
+                    <!-- Contenido personalizado de la plantilla -->
+                    <p>Este es el contenido de la plantilla personalizada.</p>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

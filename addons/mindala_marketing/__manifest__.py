@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "Mindala",
-    "icon": "mindala/static/description/icon.png",
-    "icon_image": "mindala/static/description/icon.png",
+    "name": "Mindala Marketing",
+    "icon": "mindala_marketing/static/description/icon.png",
+    "icon_image": "mindala_marketing/static/description/icon.png",
     "summary": """
-       Mindala Framework""",
+       Mindala Marketing""",
     "description": """
-        Aplicación de Mindala con multiples tipos de datos
+        Marketing Aplication
     """,
     "author": "dmanzano",
     "website": "https://www.mindalatech.com",
@@ -16,15 +16,15 @@
     "category": "Website/Website",
     "version": "0.1",
     # any module necessary for this one to work correctly
-    "depends": ["website_partner"],
+    "depends": ["website_partner", "mindala"],
     # always loaded
     "data": [
-        "views/base_back_view.xml",
-        "views/base_config_settings_views.xml",
+        "views/mindala_news/back_views.xml",
+        "views/mindala_news/config_settings_view.xml",
     ],
     # only loaded in demonstration mode
     "demo": [
-        "demo/demo.xml",
+        # 'demo/demo.xml',
     ],
     "assets": {
         "website.assets_wysiwyg": [],

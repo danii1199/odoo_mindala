@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="mindala_news_form_view" model="ir.ui.view">
+            <field name="name">mindala_news_form_view</field>
+            <field name="model">mindala.news</field>
+            <field name="inherit_id" ref="mindala.mindala_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook" position="inside">
+                        <field name="author_tab" invisible="1"/>
+                        <page name="authors" string="Authors" attrs="{'invisible': [('author_tab', '=', False)]}">
+                            <field name="authors"/>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="mindala_news_tree_view" model="ir.ui.view">
+            <field name="name">mindala_news_tree_view</field>
+            <field name="model">mindala.news</field>
+            <field name="inherit_id" ref="mindala.mindala_view_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="after">
+                        <field name="subtitle"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="mindala_news_action" model="ir.actions.act_window">
+            <field name="name">News</field>
+            <field name="res_model">mindala.news</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                                (0, 0, {'view_mode': 'tree', 'view_id': ref('mindala_news_tree_view')}),
+                                (0, 0, {'view_mode': 'form', 'view_id': ref('mindala_news_form_view')}),
+                            ]"/>
+        </record>
+
+        <menuitem id="menu_mindala_news_pages"
+                  parent="website.menu_content"
+                  sequence="20"
+                  name="News"
+                  action="mindala_news_action"/>
+    </data>
+</odoo>

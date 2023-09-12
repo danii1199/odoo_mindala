@@ -7,27 +7,44 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_button_box" name="button_box"
-                             attrs="{'invisible': [('active', '=', False)]}">
-                            <field name="is_published" widget="website_redirect_button"/>
-                        </div>
-                        <notebook>
+                        <notebook name="notebook">
                             <page string="Content" name="content">
                                 <field name="active" invisible="1"/>
-                                <field name="name" placeholder="New Title"/>
-                                <field name="website_id" groups="website.group_multi_website"/>
-                            </page>
-                            <page string="details" name="details">
-                                <field name="author_id"/>
-                                <field name="create_date" groups="base.group_no_one"/>
-                                <field name="post_date"/>
-                                <field name="write_uid"/>
-                                <field name="write_date"/>
+                                <group>
+                                    <field name="name" string="Name"/>
+                                    <field name="subtitle" string="Subtitle"/>
+                                </group>
+                                <group>
+                                    <field name="content" string="Content"/>
+                                </group>
                             </page>
                         </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
+
+        <record id="mindala_view_tree" model="ir.ui.view">
+            <field name="name">mindala_view_tree</field>
+            <field name="model">mindala.base</field>
+            <field name="arch" type="xml">
+                <tree string="mindala_tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
     </data>
+    <!--        <record id="mindala_view_kanban" model="ir.ui.view">-->
+    <!--            <field name="name">mindala_view_kanban</field>-->
+    <!--            <field name="model">mindala.base</field>-->
+    <!--            <field name="arch" type="xml">-->
+    <!--                <kanban>-->
+    <!--                    <field name="name"/>-->
+    <!--                    <templates>-->
+    <!--                        <t t-name="kanban-box">-->
+    <!--                        </t>-->
+    <!--                    </templates>-->
+    <!--                </kanban>-->
+    <!--            </field>-->
+    <!--        </record>-->
 </odoo>
